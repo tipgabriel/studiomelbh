@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Meltranças BH | Veja nossos trabalhos em tranças afro</title>
+    <meta name="description" content="Confira nossa galeria com trabalhos em tranças nagô, box braids, fulani braids e tranças boxeadora em Belo Horizonte.">
+    <meta name="keywords" content="galeria tranças afro, trabalhos box braids, tranças nagô bh, fulani braids fotos">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-pink': '#EC4899',
+                        'brand-purple': '#8B5CF6'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Galeria Meltranças BH",
+        "description": "Galeria de trabalhos do estúdio de tranças Meltranças BH",
+        "provider": {
+            "@type": "HairSalon",
+            "name": "Meltranças BH - Estúdio de Tranças"
+        }
+    }
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 cta-gradient rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">M</span>
+                    </div>
+                    <span class="font-bold text-xl text-gray-900">Meltranças BH</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Início</a>
+                    <a href="sobre.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Sobre</a>
+                    <a href="servicos.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Serviços</a>
+                    <a href="galeria.html" class="px-3 py-2 text-sm font-medium text-brand-pink border-b-2 border-brand-pink">Galeria</a>
+                    <a href="contato.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Contato</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-gray-700 hover:text-brand-pink hover:bg-gray-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Início</a>
+                <a href="sobre.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Sobre</a>
+                <a href="servicos.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Serviços</a>
+                <a href="galeria.html" class="block px-3 py-2 text-base font-medium text-brand-pink bg-pink-50">Galeria</a>
+                <a href="contato.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Nossa <span class="gradient-text">Galeria</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                        Conheça nossos trabalhos e se inspire com diferentes estilos de tranças afro.
+                    </p>
+                    <button onclick="openWhatsApp('Olá! Vi a galeria e gostaria de agendar um horário.')" class="btn-whatsapp">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        WhatsApp
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="py-8 bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="filterGallery('all')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-brand-pink text-white">
+                        Todos os Estilos
+                    </button>
+                    <button onclick="filterGallery('nago')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
+                        Tranças Nagô
+                    </button>
+                    <button onclick="filterGallery('boxBraids')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
+                        Box Braids
+                    </button>
+                    <button onclick="filterGallery('boxeadora')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
+                        Tranças Boxeadora
+                    </button>
+                    <button onclick="filterGallery('fulani')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
+                        Fulani Braids
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Gallery images will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 cta-gradient">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Gostou do que viu?
+                </h2>
+                <p class="text-xl text-pink-100 mb-8 max-w-2xl mx-auto">
+                    Agende seu horário e tenha tranças lindas como essas!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openWhatsApp('Olá! Vi a galeria e gostaria de agendar um horário.')" class="btn-whatsapp">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        WhatsApp
+                    </button>
+                    <a href="contato.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-white text-brand-pink font-medium rounded-lg hover:bg-gray-100 transition-colors">
+                        <span>Formulário de Contato</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="gallery-modal hidden">
+        <button onclick="closeGalleryModal()" class="modal-control modal-close">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        
+        <button onclick="navigateGallery('prev')" class="modal-control modal-prev">
+            <i data-lucide="chevron-left" class="w-8 h-8"></i>
+        </button>
+        
+        <button onclick="navigateGallery('next')" class="modal-control modal-next">
+            <i data-lucide="chevron-right" class="w-8 h-8"></i>
+        </button>
+        
+        <div class="relative max-w-4xl max-h-full mx-4">
+            <img id="modal-image" src="" alt="" class="max-w-full max-h-full object-contain">
+            
+            <div class="absolute bottom-4 left-4 text-white">
+                <p id="modal-alt" class="text-lg font-medium"></p>
+                <p id="modal-counter" class="text-sm opacity-75"></p>
+            </div>
+            
+            <div class="absolute top-4 left-4 text-white text-sm opacity-75">
+                <p>Use as setas do teclado para navegar • ESC para fechar</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 cta-gradient rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">M</span>
+                        </div>
+                        <span class="font-bold text-lg">Meltranças BH</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Estúdio especializado em tranças afro, valorizando a beleza natural dos cabelos crespos e cacheados.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/meltrancasbh/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-brand-pink transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contato</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-pink"></i>
+                            <span class="text-gray-300">(31) 93301-2152</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-pink"></i>
+                            <span class="text-gray-300">Belo Horizonte, MG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Links Úteis</h3>
+                    <div class="space-y-2">
+                        <a href="termos.html" class="text-gray-300 hover:text-brand-pink transition-colors block">Termos de Uso</a>
+                        <a href="privacidade.html" class="text-gray-300 hover:text-brand-pink transition-colors block">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© <span id="current-year">2024</span> Meltranças BH. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="data/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize gallery icons after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
