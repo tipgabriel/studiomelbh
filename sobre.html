@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Meltranças BH | Nossa história e valores</title>
+    <meta name="description" content="Conheça a história do Meltranças BH, nossa missão, visão e valores. Estúdio especializado em tranças afro em Belo Horizonte.">
+    <meta name="keywords" content="sobre meltranças bh, história estúdio tranças, missão tranças afro, valores beleza natural">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-pink': '#EC4899',
+                        'brand-purple': '#8B5CF6'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "mainEntity": {
+            "@type": "HairSalon",
+            "name": "Meltranças BH - Estúdio de Tranças",
+            "description": "O Meltranças BH é um estúdio especializado em tranças afro, localizado no coração de Belo Horizonte. Nossa missão é valorizar a beleza natural dos cabelos crespos e cacheados através de técnicas tradicionais e modernas de trançado."
+        }
+    }
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 cta-gradient rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">M</span>
+                    </div>
+                    <span class="font-bold text-xl text-gray-900">Meltranças BH</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Início</a>
+                    <a href="sobre.html" class="px-3 py-2 text-sm font-medium text-brand-pink border-b-2 border-brand-pink">Sobre</a>
+                    <a href="servicos.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Serviços</a>
+                    <a href="galeria.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Galeria</a>
+                    <a href="contato.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Contato</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-gray-700 hover:text-brand-pink hover:bg-gray-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Início</a>
+                <a href="sobre.html" class="block px-3 py-2 text-base font-medium text-brand-pink bg-pink-50">Sobre</a>
+                <a href="servicos.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Serviços</a>
+                <a href="galeria.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Galeria</a>
+                <a href="contato.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Sobre o <span class="gradient-text">Meltranças BH</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        O Meltranças BH é um estúdio especializado em tranças afro, localizado no coração de Belo Horizonte. Nossa missão é valorizar a beleza natural dos cabelos crespos e cacheados através de técnicas tradicionais e modernas de trançado.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Nossa História</h2>
+                        <div class="space-y-4 text-gray-600 leading-relaxed">
+                            <p>
+                                O Meltranças BH nasceu da paixão pela arte das tranças e do desejo de valorizar a beleza natural dos cabelos afro. Localizado no coração de Belo Horizonte, nosso estúdio é um espaço acolhedor onde cada cliente se sente especial e respeitada.
+                            </p>
+                            <p>
+                                Nossa trajetória começou com o sonho de criar um lugar onde as técnicas ancestrais africanas se encontrassem com as tendências modernas, proporcionando não apenas um penteado, mas uma experiência de empoderamento e autoestima.
+                            </p>
+                            <p>
+                                Com mais de 3 anos de experiência, já atendemos centenas de clientes, cada uma com sua história única e suas necessidades específicas. Nosso compromisso é sempre oferecer um serviço de excelência, respeitando a individualidade de cada pessoa.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1644152993066-9b9ee687930d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=85" 
+                             alt="Estúdio Meltranças BH" 
+                             class="rounded-lg shadow-xl w-full h-96 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Values -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Mission -->
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6">
+                            <i data-lucide="target" class="w-8 h-8 text-brand-pink"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Missão</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Proporcionar a cada cliente uma experiência única, valorizando sua beleza natural e fortalecendo sua autoestima através da arte das tranças.
+                        </p>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-6">
+                            <i data-lucide="award" class="w-8 h-8 text-brand-purple"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Visão</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Ser referência em Belo Horizonte na arte das tranças, promovendo a cultura afro e empoderando mulheres através da beleza.
+                        </p>
+                    </div>
+
+                    <!-- Values -->
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6">
+                            <i data-lucide="heart" class="w-8 h-8 text-brand-pink"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Valores</h3>
+                        <ul class="text-gray-600 leading-relaxed space-y-2">
+                            <li class="flex items-center justify-center">
+                                <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+                                Respeito à cultura afro
+                            </li>
+                            <li class="flex items-center justify-center">
+                                <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+                                Qualidade e excelência
+                            </li>
+                            <li class="flex items-center justify-center">
+                                <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+                                Atendimento personalizado
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        Nossa Equipe
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Profissionais apaixonadas pela arte das tranças, dedicadas a realçar sua beleza natural.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="relative mb-6">
+                            <img src="https://images.unsplash.com/photo-1644152993066-9b9ee687930d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=85" 
+                                 alt="Melissa - Fundadora" 
+                                 class="w-48 h-48 rounded-full object-cover mx-auto shadow-lg">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Melissa</h3>
+                        <p class="text-brand-pink font-medium mb-4">Fundadora e Trancista Principal</p>
+                        <p class="text-gray-600 leading-relaxed max-w-md mx-auto">
+                            Com mais de 3 anos de experiência em tranças afro, Melissa é especialista em técnicas tradicionais e modernas. Sua paixão pela cultura afro e dedicação à excelência fazem dela uma referência em Belo Horizonte.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commitment Section -->
+        <section class="py-16 cta-gradient">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    Nosso Compromisso
+                </h2>
+                <p class="text-xl text-pink-100 max-w-3xl mx-auto leading-relaxed mb-8">
+                    No Meltranças BH, cada cliente é única e especial. Nosso compromisso é proporcionar uma experiência excepcional, desde o primeiro contato até o resultado final, sempre respeitando sua individualidade e valorizando sua beleza natural.
+                </p>
+                <button onclick="openWhatsApp()" class="btn-whatsapp">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Entre em Contato
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 cta-gradient rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">M</span>
+                        </div>
+                        <span class="font-bold text-lg">Meltranças BH</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Estúdio especializado em tranças afro, valorizando a beleza natural dos cabelos crespos e cacheados.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/meltrancasbh/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-brand-pink transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contato</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-pink"></i>
+                            <span class="text-gray-300">(31) 93301-2152</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-pink"></i>
+                            <span class="text-gray-300">Belo Horizonte, MG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Links Úteis</h3>
+                    <div class="space-y-2">
+                        <a href="termos.html" class="text-gray-300 hover:text-brand-pink transition-colors block">Termos de Uso</a>
+                        <a href="privacidade.html" class="text-gray-300 hover:text-brand-pink transition-colors block">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2024 Meltranças BH. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="data/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
