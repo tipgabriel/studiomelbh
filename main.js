@@ -35,6 +35,15 @@ function openWhatsApp(message = "Olá! Gostaria de agendar um horário.") {
     window.open(whatsappUrl, '_blank');
 }
 
+// Update copyright year automatically
+function updateCopyrightYear() {
+    const currentYear = new Date().getFullYear();
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = currentYear;
+    }
+}
+
 // Gallery functionality
 let currentImageIndex = 0;
 let currentImages = [];
@@ -114,57 +123,57 @@ function filterGallery(category) {
     const galleryData = {
         nago: [
             {
-                url: "https://images.unsplash.com/photo-1644152993066-9b9ee687930d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=85",
+                url: "https://images.unsplash.com/photo-1644152993066-9b9ee687930d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=100&w=800",
                 alt: "Tranças Nagô estilo tradicional"
             },
             {
-                url: "https://images.unsplash.com/photo-1702236240794-58dc4c6895e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=85",
+                url: "https://images.unsplash.com/photo-1702236240794-58dc4c6895e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=100&w=800",
                 alt: "Tranças Nagô com padrão geométrico"
             },
             {
-                url: "https://images.unsplash.com/photo-1747330666091-ee0e46f8a72c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=85",
+                url: "https://images.unsplash.com/photo-1747330666091-ee0e46f8a72c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=100&w=800",
                 alt: "Tranças Nagô elaboradas"
             }
         ],
         boxBraids: [
             {
-                url: "https://images.unsplash.com/photo-1594254773847-9fce26e950bc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=85",
+                url: "https://images.unsplash.com/photo-1594254773847-9fce26e950bc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=100&w=800",
                 alt: "Box Braids longas"
             },
             {
-                url: "https://images.unsplash.com/photo-1606416132922-22ab37c1231e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=85",
+                url: "https://images.unsplash.com/photo-1606416132922-22ab37c1231e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=100&w=800",
                 alt: "Box Braids médias"
             },
             {
-                url: "https://images.unsplash.com/photo-1592328906746-0a3ca0bde253?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwzfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=85",
+                url: "https://images.unsplash.com/photo-1592328906746-0a3ca0bde253?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwzfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=100&w=800",
                 alt: "Box Braids com cores"
             }
         ],
         boxeadora: [
             {
-                url: "https://images.unsplash.com/photo-1673470907547-1c0c6a996095?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxjb3Jucm93c3xlbnwwfHx8fDE3NTc1MzU5NjV8MA&ixlib=rb-4.1.0&q=85",
+                url: "https://images.unsplash.com/photo-1673470907547-1c0c6a996095?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxjb3Jucm93c3xlbnwwfHx8fDE3NTc1MzU5NjV8MA&ixlib=rb-4.1.0&q=100&w=800",
                 alt: "Tranças Boxeadora clássicas"
             },
             {
-                url: "https://images.unsplash.com/photo-1698299708000-bb14e23fe2df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwzfHxjb3Jucm93c3xlbnwwfHx8fDE3NTc1MzU5NjV8MA&ixlib=rb-4.1.0&q=85",
+                url: "https://images.unsplash.com/photo-1698299708000-bb14e23fe2df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwzfHxjb3Jucm93c3xlbnwwfHx8fDE3NTc1MzU5NjV8MA&ixlib=rb-4.1.0&q=100&w=800",
                 alt: "Tranças Boxeadora laterais"
             },
             {
-                url: "https://images.pexels.com/photos/30215199/pexels-photo-30215199.jpeg",
+                url: "https://images.pexels.com/photos/30215199/pexels-photo-30215199.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1",
                 alt: "Tranças Boxeadora estilizadas"
             }
         ],
         fulani: [
             {
-                url: "https://images.unsplash.com/photo-1711637819201-1f2671641b4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxmdWxhbmklMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTQ5fDA&ixlib=rb-4.1.0&q=85",
+                url: "https://images.unsplash.com/photo-1711637819201-1f2671641b4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxmdWxhbmklMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTQ5fDA&ixlib=rb-4.1.0&q=100&w=800",
                 alt: "Fulani Braids com miçangas"
             },
             {
-                url: "https://images.pexels.com/photos/33837423/pexels-photo-33837423.jpeg",
+                url: "https://images.pexels.com/photos/33837423/pexels-photo-33837423.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1",
                 alt: "Fulani Braids elaboradas"
             },
             {
-                url: "https://images.pexels.com/photos/12788372/pexels-photo-12788372.jpeg",
+                url: "https://images.pexels.com/photos/12788372/pexels-photo-12788372.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1",
                 alt: "Fulani Braids tradicionais"
             }
         ]
@@ -275,6 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
     lucide.createIcons();
     initializeMobileMenu();
     setActiveNavigation();
+    updateCopyrightYear();
     
     // Initialize gallery if on gallery page
     if (window.location.pathname.includes('galeria.html')) {
