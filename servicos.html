@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Meltranças BH | Tranças Nagô, Box Braids, Fulani Braids</title>
+    <meta name="description" content="Conheça nossos serviços: Tranças Nagô, Box Braids, Tranças Boxeadora e Fulani Braids. Técnicas tradicionais e modernas em Belo Horizonte.">
+    <meta name="keywords" content="tranças nagô bh, box braids preço, fulani braids belo horizonte, tranças boxeadora">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-pink': '#EC4899',
+                        'brand-purple': '#8B5CF6'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "provider": {
+            "@type": "HairSalon",
+            "name": "Meltranças BH - Estúdio de Tranças"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços de Tranças",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Tranças Nagô",
+                        "description": "Tranças tradicionais africanas com técnicas ancestrais"
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "A partir de R$ 80",
+                        "priceCurrency": "BRL"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 cta-gradient rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">M</span>
+                    </div>
+                    <span class="font-bold text-xl text-gray-900">Meltranças BH</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Início</a>
+                    <a href="sobre.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Sobre</a>
+                    <a href="servicos.html" class="px-3 py-2 text-sm font-medium text-brand-pink border-b-2 border-brand-pink">Serviços</a>
+                    <a href="galeria.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Galeria</a>
+                    <a href="contato.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Contato</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-gray-700 hover:text-brand-pink hover:bg-gray-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Início</a>
+                <a href="sobre.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Sobre</a>
+                <a href="servicos.html" class="block px-3 py-2 text-base font-medium text-brand-pink bg-pink-50">Serviços</a>
+                <a href="galeria.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Galeria</a>
+                <a href="contato.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Nossos <span class="gradient-text">Serviços</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Especialistas em diferentes estilos de tranças afro, oferecemos técnicas tradicionais e modernas para valorizar sua beleza natural.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Tranças Nagô -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-shadow transition-all">
+                        <div class="aspect-w-16 aspect-h-9 relative">
+                            <img src="https://images.unsplash.com/photo-1644152993066-9b9ee687930d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=85" 
+                                 alt="Tranças Nagô" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Tranças Nagô</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">Tranças tradicionais africanas com técnicas ancestrais, valorizando a cultura e beleza natural dos cabelos crespos e cacheados.</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2 text-brand-pink">
+                                    <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+                                    <span class="font-semibold">A partir de R$ 80</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-gray-500">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                    <span class="text-sm">2-4 horas</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="openWhatsApp('Olá! Gostaria de agendar um horário para Tranças Nagô.')" class="btn-whatsapp w-full justify-center">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                Agendar Horário
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Box Braids -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-shadow transition-all">
+                        <div class="aspect-w-16 aspect-h-9 relative">
+                            <img src="https://images.unsplash.com/photo-1594254773847-9fce26e950bc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=85" 
+                                 alt="Box Braids" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Box Braids</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">Tranças soltas individuais que oferecem versatilidade e proteção para os cabelos, podendo ser usadas em diversos penteados.</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2 text-brand-pink">
+                                    <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+                                    <span class="font-semibold">A partir de R$ 120</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-gray-500">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                    <span class="text-sm">4-6 horas</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="openWhatsApp('Olá! Gostaria de agendar um horário para Box Braids.')" class="btn-whatsapp w-full justify-center">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                Agendar Horário
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tranças Boxeadora -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-shadow transition-all">
+                        <div class="aspect-w-16 aspect-h-9 relative">
+                            <img src="https://images.unsplash.com/photo-1673470907547-1c0c6a996095?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxjb3Jucm93c3xlbnwwfHx8fDE3NTc1MzU5NjV8MA&ixlib=rb-4.1.0&q=85" 
+                                 alt="Tranças Boxeadora" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Tranças Boxeadora</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">Tranças rentes ao couro cabeludo em formato de duas ou mais fileiras, ideais para atividades esportivas e look despojado.</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2 text-brand-pink">
+                                    <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+                                    <span class="font-semibold">A partir de R$ 60</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-gray-500">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                    <span class="text-sm">1-2 horas</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="openWhatsApp('Olá! Gostaria de agendar um horário para Tranças Boxeadora.')" class="btn-whatsapp w-full justify-center">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                Agendar Horário
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Fulani Braids -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-shadow transition-all">
+                        <div class="aspect-w-16 aspect-h-9 relative">
+                            <img src="https://images.unsplash.com/photo-1711637819201-1f2671641b4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxmdWxhbmklMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTQ5fDA&ixlib=rb-4.1.0&q=85" 
+                                 alt="Fulani Braids" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Fulani Braids</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">Combinação elegante de tranças soltas e nagô, decoradas com miçangas e acessórios, inspiradas na tradição do povo Fulani.</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2 text-brand-pink">
+                                    <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+                                    <span class="font-semibold">A partir de R$ 150</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-gray-500">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                    <span class="text-sm">5-7 horas</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="openWhatsApp('Olá! Gostaria de agendar um horário para Fulani Braids.')" class="btn-whatsapp w-full justify-center">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                Agendar Horário
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        Como Funciona
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Um processo cuidadoso para garantir o melhor resultado para você.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-4">
+                            <span class="text-2xl font-bold text-brand-pink">1</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Consulta</h3>
+                        <p class="text-gray-600">Conversamos sobre suas expectativas e analisamos seu tipo de cabelo.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
+                            <span class="text-2xl font-bold text-brand-purple">2</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Preparação</h3>
+                        <p class="text-gray-600">Preparamos os cabelos com produtos específicos para o tipo de trança escolhida.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-4">
+                            <span class="text-2xl font-bold text-brand-pink">3</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Execução</h3>
+                        <p class="text-gray-600">Aplicamos a técnica com cuidado e precisão para o melhor resultado.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
+                            <span class="text-2xl font-bold text-brand-purple">4</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Finalização</h3>
+                        <p class="text-gray-600">Finalizamos com dicas de cuidados para manter suas tranças por mais tempo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Care Tips Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        Dicas de Cuidados
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Para manter suas tranças bonitas e duradouras.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-pink-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Hidratação</h3>
+                        <p class="text-gray-600">Mantenha o couro cabeludo hidratado com óleos naturais como óleo de coco ou argan.</p>
+                    </div>
+                    
+                    <div class="bg-purple-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Proteção Noturna</h3>
+                        <p class="text-gray-600">Use uma touca de cetim ou fronha de seda para proteger as tranças durante o sono.</p>
+                    </div>
+                    
+                    <div class="bg-pink-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Limpeza Suave</h3>
+                        <p class="text-gray-600">Lave com shampoo suave, focando no couro cabeludo sem desmanchar as tranças.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 cta-gradient">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Pronta para agendar?
+                </h2>
+                <p class="text-xl text-pink-100 mb-8 max-w-2xl mx-auto">
+                    Entre em contato conosco e agende seu horário. Estamos ansiosas para cuidar de você!
+                </p>
+                <button onclick="openWhatsApp('Olá! Gostaria de agendar um horário para tranças.')" class="btn-whatsapp">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Agendar Horário
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 cta-gradient rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">M</span>
+                        </div>
+                        <span class="font-bold text-lg">Meltranças BH</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Estúdio especializado em tranças afro, valorizando a beleza natural dos cabelos crespos e cacheados.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/meltrancasbh/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-brand-pink transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contato</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-pink"></i>
+                            <span class="text-gray-300">(31) 93301-2152</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-pink"></i>
+                            <span class="text-gray-300">Belo Horizonte, MG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Links Úteis</h3>
+                    <div class="space-y-2">
+                        <a href="termos.html" class="text-gray-300 hover:text-brand-pink transition-colors block">Termos de Uso</a>
+                        <a href="privacidade.html" class="text-gray-300 hover:text-brand-pink transition-colors block">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2024 Meltranças BH. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="data/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
