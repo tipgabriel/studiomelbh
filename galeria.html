@@ -109,19 +109,19 @@
         <section class="py-8 bg-white border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-wrap justify-center gap-4">
-                    <button onclick="filterGallery('all')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-brand-pink text-white">
+                    <button onclick="filterGallery('all')" id="filter-all" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-brand-pink text-white hover:bg-pink-700">
                         Todos os Estilos
                     </button>
-                    <button onclick="filterGallery('nago')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
+                    <button onclick="filterGallery('nago')" id="filter-nago" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
                         Tranças Nagô
                     </button>
-                    <button onclick="filterGallery('boxBraids')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
+                    <button onclick="filterGallery('boxBraids')" id="filter-boxBraids" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
                         Box Braids
                     </button>
-                    <button onclick="filterGallery('boxeadora')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
+                    <button onclick="filterGallery('boxeadora')" id="filter-boxeadora" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
                         Tranças Boxeadora
                     </button>
-                    <button onclick="filterGallery('fulani')" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
+                    <button onclick="filterGallery('fulani')" id="filter-fulani" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
                         Fulani Braids
                     </button>
                 </div>
@@ -160,24 +160,24 @@
     </main>
 
     <!-- Gallery Modal -->
-    <div id="gallery-modal" class="gallery-modal hidden">
-        <button onclick="closeGalleryModal()" class="modal-control modal-close">
-            <i data-lucide="x" class="w-6 h-6"></i>
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center">
+        <button onclick="closeGalleryModal()" class="absolute top-4 right-4 text-white hover:text-pink-400 transition-colors z-60">
+            <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         
-        <button onclick="navigateGallery('prev')" class="modal-control modal-prev">
-            <i data-lucide="chevron-left" class="w-8 h-8"></i>
+        <button onclick="navigateGallery('prev')" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-pink-400 transition-colors z-60">
+            <i data-lucide="chevron-left" class="w-10 h-10"></i>
         </button>
         
-        <button onclick="navigateGallery('next')" class="modal-control modal-next">
-            <i data-lucide="chevron-right" class="w-8 h-8"></i>
+        <button onclick="navigateGallery('next')" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-pink-400 transition-colors z-60">
+            <i data-lucide="chevron-right" class="w-10 h-10"></i>
         </button>
         
         <div class="relative max-w-4xl max-h-full mx-4">
             <img id="modal-image" src="" alt="" class="max-w-full max-h-full object-contain">
             
             <div class="absolute bottom-4 left-4 text-white">
-                <p id="modal-alt" class="text-lg font-medium"></p>
+                <p id="modal-alt" class="text-lg font-medium mb-1"></p>
                 <p id="modal-counter" class="text-sm opacity-75"></p>
             </div>
             
@@ -241,12 +241,263 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="data/data.js"></script>
-    <script src="js/main.js"></script>
     <script>
-        // Initialize gallery icons after page load
+        // Business info and gallery data
+        const businessInfo = {
+            whatsapp: "5531933012152"
+        };
+
+        const galleryImages = {
+            nago: [
+                {
+                    id: 1,
+                    url: "https://images.unsplash.com/photo-1644152993066-9b9ee687930d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=100&w=800",
+                    alt: "Tranças Nagô estilo tradicional"
+                },
+                {
+                    id: 2,
+                    url: "https://images.unsplash.com/photo-1702236240794-58dc4c6895e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=100&w=800",
+                    alt: "Tranças Nagô com padrão geométrico"
+                },
+                {
+                    id: 3,
+                    url: "https://images.unsplash.com/photo-1747330666091-ee0e46f8a72c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=100&w=800",
+                    alt: "Tranças Nagô elaboradas"
+                }
+            ],
+            boxBraids: [
+                {
+                    id: 4,
+                    url: "https://images.unsplash.com/photo-1594254773847-9fce26e950bc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=100&w=800",
+                    alt: "Box Braids longas"
+                },
+                {
+                    id: 5,
+                    url: "https://images.unsplash.com/photo-1606416132922-22ab37c1231e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=100&w=800",
+                    alt: "Box Braids médias"
+                },
+                {
+                    id: 6,
+                    url: "https://images.unsplash.com/photo-1592328906746-0a3ca0bde253?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwzfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=100&w=800",
+                    alt: "Box Braids com cores"
+                }
+            ],
+            boxeadora: [
+                {
+                    id: 7,
+                    url: "https://images.unsplash.com/photo-1673470907547-1c0c6a996095?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxjb3Jucm93c3xlbnwwfHx8fDE3NTc1MzU5NjV8MA&ixlib=rb-4.1.0&q=100&w=800",
+                    alt: "Tranças Boxeadora clássicas"
+                },
+                {
+                    id: 8,
+                    url: "https://images.unsplash.com/photo-1698299708000-bb14e23fe2df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwzfHxjb3Jucm93c3xlbnwwfHx8fDE3NTc1MzU5NjV8MA&ixlib=rb-4.1.0&q=100&w=800",
+                    alt: "Tranças Boxeadora laterais"
+                },
+                {
+                    id: 9,
+                    url: "https://images.pexels.com/photos/30215199/pexels-photo-30215199.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1",
+                    alt: "Tranças Boxeadora estilizadas"
+                }
+            ],
+            fulani: [
+                {
+                    id: 10,
+                    url: "https://images.unsplash.com/photo-1711637819201-1f2671641b4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxmdWxhbmklMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTQ5fDA&ixlib=rb-4.1.0&q=100&w=800",
+                    alt: "Fulani Braids com miçangas"
+                },
+                {
+                    id: 11,
+                    url: "https://images.pexels.com/photos/33837423/pexels-photo-33837423.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1",
+                    alt: "Fulani Braids elaboradas"
+                },
+                {
+                    id: 12,
+                    url: "https://images.pexels.com/photos/12788372/pexels-photo-12788372.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1",
+                    alt: "Fulani Braids tradicionais"
+                }
+            ]
+        };
+
+        // Gallery functionality
+        let currentImageIndex = 0;
+        let currentImages = [];
+
+        // WhatsApp functionality
+        function openWhatsApp(message = "Olá! Gostaria de agendar um horário.") {
+            const phoneNumber = businessInfo.whatsapp;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Mobile menu functionality
+        function initializeMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    // Toggle icon between menu and X
+                    const icon = mobileMenuBtn.querySelector('[data-lucide]');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.setAttribute('data-lucide', 'menu');
+                    } else {
+                        icon.setAttribute('data-lucide', 'x');
+                    }
+                    lucide.createIcons();
+                });
+            }
+        }
+
+        // Update copyright year
+        function updateCopyrightYear() {
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = currentYear;
+            }
+        }
+
+        // Gallery filter functionality
+        function filterGallery(category) {
+            const allImages = [
+                ...galleryImages.nago,
+                ...galleryImages.boxBraids,
+                ...galleryImages.boxeadora,
+                ...galleryImages.fulani
+            ];
+
+            const imagesToShow = category === 'all' ? allImages : galleryImages[category] || [];
+            
+            const galleryGrid = document.getElementById('gallery-grid');
+            if (galleryGrid) {
+                galleryGrid.innerHTML = '';
+                
+                if (imagesToShow.length === 0) {
+                    galleryGrid.innerHTML = `
+                        <div class="col-span-full text-center py-12">
+                            <p class="text-gray-500 text-lg">Nenhuma imagem encontrada para esta categoria.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                imagesToShow.forEach((image, index) => {
+                    const imageElement = document.createElement('div');
+                    imageElement.className = 'group cursor-pointer relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300';
+                    imageElement.onclick = () => openGalleryModal(image.url, image.alt, imagesToShow, index);
+                    
+                    imageElement.innerHTML = `
+                        <img src="${image.url}" alt="${image.alt}" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p class="text-sm font-medium">Clique para ampliar</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    galleryGrid.appendChild(imageElement);
+                });
+            }
+            
+            // Update filter buttons
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.classList.remove('bg-brand-pink', 'text-white');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+            
+            const activeBtn = document.getElementById(`filter-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-gray-100', 'text-gray-700');
+                activeBtn.classList.add('bg-brand-pink', 'text-white');
+            }
+        }
+
+        // Gallery modal functionality
+        function openGalleryModal(imageUrl, alt, images, index) {
+            currentImages = images;
+            currentImageIndex = index;
+            
+            const modal = document.getElementById('gallery-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalAlt = document.getElementById('modal-alt');
+            const modalCounter = document.getElementById('modal-counter');
+            
+            if (modal && modalImage && modalAlt && modalCounter) {
+                modalImage.src = imageUrl;
+                modalImage.alt = alt;
+                modalAlt.textContent = alt;
+                modalCounter.textContent = `${index + 1} de ${images.length}`;
+                
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                
+                // Add keyboard event listener
+                document.addEventListener('keydown', handleGalleryKeyPress);
+                
+                // Recreate icons for modal
+                lucide.createIcons();
+            }
+        }
+
+        function closeGalleryModal() {
+            const modal = document.getElementById('gallery-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                
+                // Remove keyboard event listener
+                document.removeEventListener('keydown', handleGalleryKeyPress);
+            }
+        }
+
+        function navigateGallery(direction) {
+            if (currentImages.length === 0) return;
+            
+            if (direction === 'next') {
+                currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+            } else {
+                currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+            }
+            
+            const currentImage = currentImages[currentImageIndex];
+            const modalImage = document.getElementById('modal-image');
+            const modalAlt = document.getElementById('modal-alt');
+            const modalCounter = document.getElementById('modal-counter');
+            
+            if (modalImage && modalAlt && modalCounter) {
+                modalImage.src = currentImage.url;
+                modalImage.alt = currentImage.alt;
+                modalAlt.textContent = currentImage.alt;
+                modalCounter.textContent = `${currentImageIndex + 1} de ${currentImages.length}`;
+            }
+        }
+
+        function handleGalleryKeyPress(e) {
+            switch (e.key) {
+                case 'Escape':
+                    closeGalleryModal();
+                    break;
+                case 'ArrowLeft':
+                    navigateGallery('prev');
+                    break;
+                case 'ArrowRight':
+                    navigateGallery('next');
+                    break;
+            }
+        }
+
+        // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();
+            initializeMobileMenu();
+            updateCopyrightYear();
+            
+            // Initialize gallery with all images
+            filterGallery('all');
         });
     </script>
 </body>
