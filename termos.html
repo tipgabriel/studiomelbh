@@ -7,7 +7,6 @@
     <meta name="description" content="Termos de uso dos serviços do Meltranças BH. Condições, políticas e diretrizes para utilização dos nossos serviços.">
     <meta name="keywords" content="termos de uso, política, condições, meltranças bh">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,13 +21,10 @@
         }
     </script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
     
-    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -39,19 +35,16 @@
     </script>
 </head>
 <body class="bg-white text-gray-900">
-    <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
                 <a href="index.html" class="flex items-center space-x-2">
                     <div class="w-10 h-10 cta-gradient rounded-full flex items-center justify-center">
                         <span class="text-white font-bold text-lg">M</span>
                     </div>
-                    <span class="font-bold text-xl text-gray-900">🏠 Meltranças BH</span>
+                    <span class="font-bold text-xl text-gray-900">Meltranças BH</span>
                 </a>
 
-                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Início</a>
                     <a href="sobre.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Sobre</a>
@@ -60,163 +53,63 @@
                     <a href="contato.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Contato</a>
                 </nav>
 
-                <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="p-2 rounded-md text-gray-700 hover:text-brand-pink hover:bg-gray-100">
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-purple">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Início</a>
-                <a href="sobre.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Sobre</a>
-                <a href="servicos.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Serviços</a>
-                <a href="galeria.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Galeria</a>
-                <a href="contato.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Contato</a>
+        <nav id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Início</a>
+                <a href="sobre.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Sobre</a>
+                <a href="servicos.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Serviços</a>
+                <a href="galeria.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Galeria</a>
+                <a href="contato.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Contato</a>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="py-20 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Termos de <span class="gradient-text">Uso</span>
-                    </h1>
-                    <p class="text-lg text-gray-600">Última atualização: Janeiro de 2024</p>
-                </div>
+    <main class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl font-bold gradient-text mb-8 text-center">Termos de Uso</h1>
 
-                <div class="prose prose-lg max-w-none">
-                    <div class="space-y-8">
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Aceitação dos Termos</h2>
-                            <p class="text-gray-600 leading-relaxed">
-                                Ao utilizar os serviços do Meltranças BH - Estúdio de Tranças, você concorda em cumprir e estar vinculado aos seguintes termos e condições de uso. Se você não concordar com qualquer parte destes termos, não deverá usar nossos serviços.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Descrição dos Serviços</h2>
-                            <p class="text-gray-600 leading-relaxed mb-4">
-                                O Meltranças BH oferece serviços especializados em tranças afro, incluindo:
-                            </p>
-                            <ul class="text-gray-600 space-y-2 ml-6 list-disc">
-                                <li>Tranças Nagô</li>
-                                <li>Box Braids</li>
-                                <li>Tranças Boxeadora</li>
-                                <li>Fulani Braids</li>
-                                <li>Outros estilos de tranças afro</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Agendamentos e Cancelamentos</h2>
-                            <div class="space-y-4">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">3.1 Agendamentos</h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Os agendamentos devem ser feitos com antecedência mínima de 24 horas. Recomendamos agendamento com 1 semana de antecedência para garantir disponibilidade.
-                                    </p>
-                                </div>
-                                
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">3.2 Cancelamentos</h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Cancelamentos devem ser comunicados com pelo menos 24 horas de antecedência. Cancelamentos em cima da hora podem estar sujeitos a taxa de cancelamento.
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Responsabilidades do Cliente</h2>
-                            <div class="space-y-2">
-                                <p class="text-gray-600 leading-relaxed">O cliente se compromete a:</p>
-                                <ul class="text-gray-600 space-y-2 ml-6 list-disc">
-                                    <li>Comparecer pontualmente ao horário agendado</li>
-                                    <li>Informar sobre alergias, sensibilidades ou condições médicas relevantes</li>
-                                    <li>Seguir as instruções de cuidados pós-procedimento</li>
-                                    <li>Tratar com respeito toda a equipe do estúdio</li>
-                                    <li>Manter o ambiente limpo e organizado</li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Responsabilidades do Estúdio</h2>
-                            <div class="space-y-2">
-                                <p class="text-gray-600 leading-relaxed">O Meltranças BH se compromete a:</p>
-                                <ul class="text-gray-600 space-y-2 ml-6 list-disc">
-                                    <li>Fornecer serviços de qualidade com profissionais qualificados</li>
-                                    <li>Manter ambiente limpo e higienizado</li>
-                                    <li>Usar produtos de qualidade e materiais esterilizados</li>
-                                    <li>Respeitar o horário agendado</li>
-                                    <li>Fornecer instruções adequadas de cuidados</li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Limitação de Responsabilidade</h2>
-                            <p class="text-gray-600 leading-relaxed">
-                                O Meltranças BH não se responsabiliza por reações alérgicas ou problemas de saúde não informados previamente pelo cliente. É importante comunicar qualquer alergia, sensibilidade ou condição médica antes do procedimento.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Uso de Imagem</h2>
-                            <p class="text-gray-600 leading-relaxed">
-                                Ao utilizar nossos serviços, o cliente autoriza o uso de fotografias dos trabalhos realizados para fins de divulgação em redes sociais e materiais promocionais, salvo manifestação contrária expressa.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Contato</h2>
-                            <p class="text-gray-600 leading-relaxed">
-                                Para dúvidas sobre estes termos, entre em contato conosco através do WhatsApp (31) 93301-2152 ou visite nosso estúdio em Belo Horizonte, MG.
-                            </p>
-                        </section>
-
-                        <section class="hero-gradient p-6 rounded-lg">
-                            <p class="text-sm text-gray-500 text-center">
-                                Ao agendar e utilizar nossos serviços, você declara ter lido, compreendido e concordado com todos os termos acima descritos.
-                            </p>
-                        </section>
-                    </div>
-                </div>
+            <div class="prose max-w-none text-gray-700">
+                <p>O Meltranças BH oferece este site, incluindo todas as informações, ferramentas e serviços disponíveis, para você, o usuário, condicionado à sua aceitação de todos os termos, condições, políticas e avisos aqui declarados.</p>
+                <p>Ao visitar nosso site e/ou comprar algo de nós, você se envolve em nosso "Serviço" e concorda em estar vinculado aos seguintes termos e condições ("Termos de Serviço", "Termos"). Estes Termos de Serviço se aplicam a todos os usuários do site, incluindo, sem limitação, usuários que são navegadores, fornecedores, clientes, comerciantes e/ou contribuidores de conteúdo.</p>
+                <h3>1. Condições Gerais</h3>
+                <p>Reservamo-nos o direito de recusar o serviço a qualquer pessoa por qualquer motivo a qualquer momento. Você entende que seu conteúdo (não incluindo informações de cartão de crédito), pode ser transferido sem criptografia e envolver (a) transmissões em várias redes; e (b) alterações para se conformar e se adaptar aos requisitos técnicos de conexão de redes ou dispositivos.</p>
+                <h3>2. Precisão das Informações</h3>
+                <p>Não nos responsabilizamos se as informações disponibilizadas neste site não forem precisas, completas ou atuais. O material neste site é fornecido apenas para informação geral e não deve ser confiado ou usado como a única base para tomar decisões sem consultar fontes de informação primárias, mais precisas, mais completas ou mais oportunas. Qualquer confiança no material deste site é por sua conta e risco.</p>
+                <h3>3. Modificações no Serviço e Preços</h3>
+                <p>Os preços dos nossos produtos estão sujeitos a alterações sem aviso prévio. Reservamo-nos o direito de, a qualquer momento, modificar ou descontinuar o Serviço (ou qualquer parte ou conteúdo do mesmo) sem aviso prévio.</p>
             </div>
-        </section>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Company Info -->
                 <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 cta-gradient rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold">M</span>
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 cta-gradient rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">M</span>
                         </div>
-                        <span class="font-bold text-lg">🏠 Meltranças BH</span>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        Estúdio especializado em tranças afro, valorizando a beleza natural dos cabelos crespos e cacheados.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/meltrancasbh/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-brand-pink transition-colors">
+                        <span class="font-bold text-xl text-white">Meltranças BH</span>
+                    </a>
+                    <p class="text-gray-400 text-sm">Estúdio de tranças afro em Belo Horizonte, especialista em beleza e autoestima.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.instagram.com/meltrancasbh/" target="_blank" class="text-gray-400 hover:text-brand-pink transition-colors">
                             <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" onclick="openWhatsApp('Olá! Gostaria de agendar um horário.'); return false;" class="text-gray-400 hover:text-brand-pink transition-colors">
+                            <i data-lucide="whatsapp" class="w-6 h-6"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Contact Info -->
                 <div>
                     <h3 class="font-semibold text-lg mb-4">Contato</h3>
                     <div class="space-y-3">
@@ -231,7 +124,6 @@
                     </div>
                 </div>
 
-                <!-- Links -->
                 <div>
                     <h3 class="font-semibold text-lg mb-4">Links Úteis</h3>
                     <div class="space-y-2">
@@ -247,7 +139,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="data/data.js"></script>
     <script src="js/main.js"></script>
 </body>
