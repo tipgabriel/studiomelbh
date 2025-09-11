@@ -7,7 +7,6 @@
     <meta name="description" content="Confira nossa galeria com trabalhos em tranças nagô, box braids, fulani braids e tranças boxeadora em Belo Horizonte.">
     <meta name="keywords" content="galeria tranças afro, trabalhos box braids, tranças nagô bh, fulani braids fotos">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,13 +21,10 @@
         }
     </script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
     
-    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -43,19 +39,16 @@
     </script>
 </head>
 <body class="bg-white text-gray-900">
-    <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
                 <a href="index.html" class="flex items-center space-x-2">
                     <div class="w-10 h-10 cta-gradient rounded-full flex items-center justify-center">
                         <span class="text-white font-bold text-lg">M</span>
                     </div>
-                    <span class="font-bold text-xl text-gray-900">🏠 Meltranças BH</span>
+                    <span class="font-bold text-xl text-gray-900">Meltranças BH</span>
                 </a>
 
-                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Início</a>
                     <a href="sobre.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Sobre</a>
@@ -64,152 +57,90 @@
                     <a href="contato.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Contato</a>
                 </nav>
 
-                <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="p-2 rounded-md text-gray-700 hover:text-brand-pink hover:bg-gray-100">
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-purple">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Início</a>
-                <a href="sobre.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Sobre</a>
-                <a href="servicos.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Serviços</a>
-                <a href="galeria.html" class="block px-3 py-2 text-base font-medium text-brand-pink bg-pink-50">Galeria</a>
-                <a href="contato.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Contato</a>
+        <nav id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Início</a>
+                <a href="sobre.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Sobre</a>
+                <a href="servicos.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Serviços</a>
+                <a href="galeria.html" class="block px-3 py-2 rounded-md text-base font-medium text-white cta-gradient">Galeria</a>
+                <a href="contato.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Contato</a>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-gradient py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Nossa <span class="gradient-text">Galeria</span>
-                    </h1>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                        Conheça nossos trabalhos e se inspire com diferentes estilos de tranças afro.
-                    </p>
-                    <button onclick="openWhatsApp('Olá! Vi a galeria e gostaria de agendar um horário.')" class="inline-flex items-center space-x-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-green-500/25">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        <span>WhatsApp</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Category Filter -->
-        <section class="py-8 bg-white border-b border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button onclick="filterGallery('all')" id="filter-all" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-brand-pink text-white hover:bg-pink-700">
-                        Todos os Estilos
-                    </button>
-                    <button onclick="filterGallery('nago')" id="filter-nago" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
-                        Tranças Nagô
-                    </button>
-                    <button onclick="filterGallery('boxBraids')" id="filter-boxBraids" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
-                        Box Braids
-                    </button>
-                    <button onclick="filterGallery('boxeadora')" id="filter-boxeadora" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
-                        Tranças Boxeadora
-                    </button>
-                    <button onclick="filterGallery('fulani')" id="filter-fulani" class="filter-btn px-6 py-3 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-pink-100 hover:text-brand-pink">
-                        Fulani Braids
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Grid -->
-        <section class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    <!-- Gallery images will be loaded here by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-16 cta-gradient">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
-                    Gostou do que viu?
-                </h2>
-                <p class="text-xl text-pink-100 mb-8 max-w-2xl mx-auto">
-                    <span class="text-black font-bold text-2xl">Agende seu horário e tenha tranças lindas como essas!</span>
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="openWhatsApp('Olá! Vi a galeria e gostaria de agendar um horário.')" class="inline-flex items-center space-x-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-green-500/25">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        <span>WhatsApp</span>
-                    </button>
-                    <a href="contato.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-white text-brand-pink font-medium rounded-lg hover:bg-gray-100 transition-colors">
-                        <span>Formulário de Contato</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Gallery Modal -->
-    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center">
-        <button onclick="closeGalleryModal()" class="absolute top-4 right-4 text-white hover:text-pink-400 transition-colors z-60">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        
-        <button onclick="navigateGallery('prev')" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-pink-400 transition-colors z-60">
-            <i data-lucide="chevron-left" class="w-10 h-10"></i>
-        </button>
-        
-        <button onclick="navigateGallery('next')" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-pink-400 transition-colors z-60">
-            <i data-lucide="chevron-right" class="w-10 h-10"></i>
-        </button>
-        
-        <div class="relative max-w-4xl max-h-full mx-4">
-            <img id="modal-image" src="" alt="" class="max-w-full max-h-full object-contain">
-            
-            <div class="absolute bottom-4 left-4 text-white">
-                <p id="modal-alt" class="text-lg font-medium mb-1"></p>
-                <p id="modal-counter" class="text-sm opacity-75"></p>
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Nossa Galeria</h1>
+                <p class="text-lg text-gray-600">Confira a beleza e a diversidade do nosso trabalho.</p>
             </div>
             
-            <div class="absolute top-4 left-4 text-white text-sm opacity-75">
-                <p>Use as setas do teclado para navegar • ESC para fechar</p>
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button onclick="filterGallery('all')" class="gallery-filter-btn active">Todas</button>
+                <button onclick="filterGallery('boxBraids')" class="gallery-filter-btn">Box Braids</button>
+                <button onclick="filterGallery('nago')" class="gallery-filter-btn">Tranças Nagô</button>
+                <button onclick="filterGallery('fulani')" class="gallery-filter-btn">Fulani Braids</button>
+                <button onclick="filterGallery('boxeadora')" class="gallery-filter-btn">Tranças Boxeadora</button>
             </div>
+            
+            <div id="gallery-grid" class="grid gallery-grid gap-4">
+                </div>
+        </div>
+    </section>
+
+    <div id="gallery-modal" class="fixed inset-0 z-[100] hidden bg-gray-900 bg-opacity-90 flex items-center justify-center p-4">
+        <div class="relative w-full max-w-5xl">
+            <button onclick="closeGalleryModal()" class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            
+            <button onclick="navigateGallery('prev')" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors hidden md:block">
+                <i data-lucide="chevron-left" class="w-10 h-10"></i>
+            </button>
+            <button onclick="navigateGallery('next')" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors hidden md:block">
+                <i data-lucide="chevron-right" class="w-10 h-10"></i>
+            </button>
+            
+            <div class="relative">
+                <img id="modal-image" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain rounded-lg">
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 bg-opacity-70 text-white text-sm px-3 py-1 rounded-full">
+                    <span id="modal-counter"></span>
+                </div>
+            </div>
+            
+            <p id="modal-alt" class="text-white text-center mt-4"></p>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Company Info -->
                 <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 cta-gradient rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold">M</span>
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 cta-gradient rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">M</span>
                         </div>
-                        <span class="font-bold text-lg">🏠 Meltranças BH</span>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        Estúdio especializado em tranças afro, valorizando a beleza natural dos cabelos crespos e cacheados.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/meltrancasbh/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-brand-pink transition-colors">
+                        <span class="font-bold text-xl text-white">Meltranças BH</span>
+                    </a>
+                    <p class="text-gray-400 text-sm">Estúdio de tranças afro em Belo Horizonte, especialista em beleza e autoestima.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.instagram.com/meltrancasbh/" target="_blank" class="text-gray-400 hover:text-brand-pink transition-colors">
                             <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" onclick="openWhatsApp('Olá! Gostaria de agendar um horário.'); return false;" class="text-gray-400 hover:text-brand-pink transition-colors">
+                            <i data-lucide="whatsapp" class="w-6 h-6"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Contact Info -->
                 <div>
                     <h3 class="font-semibold text-lg mb-4">Contato</h3>
                     <div class="space-y-3">
@@ -224,7 +155,6 @@
                     </div>
                 </div>
 
-                <!-- Links -->
                 <div>
                     <h3 class="font-semibold text-lg mb-4">Links Úteis</h3>
                     <div class="space-y-2">
@@ -240,263 +170,11 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <script src="data/data.js"></script>
+    <script src="js/main.js"></script>
     <script>
-        // Business info and gallery data
-        const businessInfo = {
-            whatsapp: "5531933012152"
-        };
-
-        const galleryImages = {
-            nago: [
-                {
-                    id: 1,
-                    url: "https://images.unsplash.com/photo-1644152993066-9b9ee687930d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=100&w=800",
-                    alt: "Tranças Nagô estilo tradicional"
-                },
-                {
-                    id: 2,
-                    url: "https://images.unsplash.com/photo-1702236240794-58dc4c6895e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=100&w=800",
-                    alt: "Tranças Nagô com padrão geométrico"
-                },
-                {
-                    id: 3,
-                    url: "https://images.unsplash.com/photo-1747330666091-ee0e46f8a72c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxhZnJpY2FuJTIwYnJhaWRzfGVufDB8fHx8MTc1NzUzNTk0Mnww&ixlib=rb-4.1.0&q=100&w=800",
-                    alt: "Tranças Nagô elaboradas"
-                }
-            ],
-            boxBraids: [
-                {
-                    id: 4,
-                    url: "https://images.unsplash.com/photo-1594254773847-9fce26e950bc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=100&w=800",
-                    alt: "Box Braids longas"
-                },
-                {
-                    id: 5,
-                    url: "https://images.unsplash.com/photo-1606416132922-22ab37c1231e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=100&w=800",
-                    alt: "Box Braids médias"
-                },
-                {
-                    id: 6,
-                    url: "https://images.unsplash.com/photo-1592328906746-0a3ca0bde253?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwzfHxib3glMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTI3fDA&ixlib=rb-4.1.0&q=100&w=800",
-                    alt: "Box Braids com cores"
-                }
-            ],
-            boxeadora: [
-                {
-                    id: 7,
-                    url: "https://images.unsplash.com/photo-1673470907547-1c0c6a996095?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxjb3Jucm93c3xlbnwwfHx8fDE3NTc1MzU5NjV8MA&ixlib=rb-4.1.0&q=100&w=800",
-                    alt: "Tranças Boxeadora clássicas"
-                },
-                {
-                    id: 8,
-                    url: "https://images.unsplash.com/photo-1698299708000-bb14e23fe2df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwzfHxjb3Jucm93c3xlbnwwfHx8fDE3NTc1MzU5NjV8MA&ixlib=rb-4.1.0&q=100&w=800",
-                    alt: "Tranças Boxeadora laterais"
-                },
-                {
-                    id: 9,
-                    url: "https://images.pexels.com/photos/30215199/pexels-photo-30215199.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1",
-                    alt: "Tranças Boxeadora estilizadas"
-                }
-            ],
-            fulani: [
-                {
-                    id: 10,
-                    url: "https://images.unsplash.com/photo-1711637819201-1f2671641b4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxmdWxhbmklMjBicmFpZHN8ZW58MHx8fHwxNzU3NTM1OTQ5fDA&ixlib=rb-4.1.0&q=100&w=800",
-                    alt: "Fulani Braids com miçangas"
-                },
-                {
-                    id: 11,
-                    url: "https://images.pexels.com/photos/33837423/pexels-photo-33837423.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1",
-                    alt: "Fulani Braids elaboradas"
-                },
-                {
-                    id: 12,
-                    url: "https://images.pexels.com/photos/12788372/pexels-photo-12788372.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1",
-                    alt: "Fulani Braids tradicionais"
-                }
-            ]
-        };
-
-        // Gallery functionality
-        let currentImageIndex = 0;
-        let currentImages = [];
-
-        // WhatsApp functionality
-        function openWhatsApp(message = "Olá! Gostaria de agendar um horário.") {
-            const phoneNumber = businessInfo.whatsapp;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Mobile menu functionality
-        function initializeMobileMenu() {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                    
-                    // Toggle icon between menu and X
-                    const icon = mobileMenuBtn.querySelector('[data-lucide]');
-                    if (mobileMenu.classList.contains('hidden')) {
-                        icon.setAttribute('data-lucide', 'menu');
-                    } else {
-                        icon.setAttribute('data-lucide', 'x');
-                    }
-                    lucide.createIcons();
-                });
-            }
-        }
-
-        // Update copyright year
-        function updateCopyrightYear() {
-            const currentYear = new Date().getFullYear();
-            const yearElement = document.getElementById('current-year');
-            if (yearElement) {
-                yearElement.textContent = currentYear;
-            }
-        }
-
-        // Gallery filter functionality
-        function filterGallery(category) {
-            const allImages = [
-                ...galleryImages.nago,
-                ...galleryImages.boxBraids,
-                ...galleryImages.boxeadora,
-                ...galleryImages.fulani
-            ];
-
-            const imagesToShow = category === 'all' ? allImages : galleryImages[category] || [];
-            
-            const galleryGrid = document.getElementById('gallery-grid');
-            if (galleryGrid) {
-                galleryGrid.innerHTML = '';
-                
-                if (imagesToShow.length === 0) {
-                    galleryGrid.innerHTML = `
-                        <div class="col-span-full text-center py-12">
-                            <p class="text-gray-500 text-lg">Nenhuma imagem encontrada para esta categoria.</p>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                imagesToShow.forEach((image, index) => {
-                    const imageElement = document.createElement('div');
-                    imageElement.className = 'group cursor-pointer relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300';
-                    imageElement.onclick = () => openGalleryModal(image.url, image.alt, imagesToShow, index);
-                    
-                    imageElement.innerHTML = `
-                        <img src="${image.url}" alt="${image.alt}" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
-                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 flex items-center justify-center">
-                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <p class="text-sm font-medium">Clique para ampliar</p>
-                            </div>
-                        </div>
-                    `;
-                    
-                    galleryGrid.appendChild(imageElement);
-                });
-            }
-            
-            // Update filter buttons
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            filterButtons.forEach(btn => {
-                btn.classList.remove('bg-brand-pink', 'text-white');
-                btn.classList.add('bg-gray-100', 'text-gray-700');
-            });
-            
-            const activeBtn = document.getElementById(`filter-${category}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-gray-100', 'text-gray-700');
-                activeBtn.classList.add('bg-brand-pink', 'text-white');
-            }
-        }
-
-        // Gallery modal functionality
-        function openGalleryModal(imageUrl, alt, images, index) {
-            currentImages = images;
-            currentImageIndex = index;
-            
-            const modal = document.getElementById('gallery-modal');
-            const modalImage = document.getElementById('modal-image');
-            const modalAlt = document.getElementById('modal-alt');
-            const modalCounter = document.getElementById('modal-counter');
-            
-            if (modal && modalImage && modalAlt && modalCounter) {
-                modalImage.src = imageUrl;
-                modalImage.alt = alt;
-                modalAlt.textContent = alt;
-                modalCounter.textContent = `${index + 1} de ${images.length}`;
-                
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                
-                // Add keyboard event listener
-                document.addEventListener('keydown', handleGalleryKeyPress);
-                
-                // Recreate icons for modal
-                lucide.createIcons();
-            }
-        }
-
-        function closeGalleryModal() {
-            const modal = document.getElementById('gallery-modal');
-            if (modal) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                
-                // Remove keyboard event listener
-                document.removeEventListener('keydown', handleGalleryKeyPress);
-            }
-        }
-
-        function navigateGallery(direction) {
-            if (currentImages.length === 0) return;
-            
-            if (direction === 'next') {
-                currentImageIndex = (currentImageIndex + 1) % currentImages.length;
-            } else {
-                currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
-            }
-            
-            const currentImage = currentImages[currentImageIndex];
-            const modalImage = document.getElementById('modal-image');
-            const modalAlt = document.getElementById('modal-alt');
-            const modalCounter = document.getElementById('modal-counter');
-            
-            if (modalImage && modalAlt && modalCounter) {
-                modalImage.src = currentImage.url;
-                modalImage.alt = currentImage.alt;
-                modalAlt.textContent = currentImage.alt;
-                modalCounter.textContent = `${currentImageIndex + 1} de ${currentImages.length}`;
-            }
-        }
-
-        function handleGalleryKeyPress(e) {
-            switch (e.key) {
-                case 'Escape':
-                    closeGalleryModal();
-                    break;
-                case 'ArrowLeft':
-                    navigateGallery('prev');
-                    break;
-                case 'ArrowRight':
-                    navigateGallery('next');
-                    break;
-            }
-        }
-
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            lucide.createIcons();
-            initializeMobileMenu();
-            updateCopyrightYear();
-            
-            // Initialize gallery with all images
+        // Initialize dynamic content on gallery page
+        document.addEventListener('DOMContentLoaded', () => {
             filterGallery('all');
         });
     </script>
