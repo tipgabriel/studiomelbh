@@ -7,7 +7,6 @@
     <meta name="description" content="Entre em contato com o Meltranças BH. Telefone (31) 93301-2152, WhatsApp, formulário online. Agende seu horário em Belo Horizonte.">
     <meta name="keywords" content="contato meltranças bh, agendar tranças, telefone whatsapp, belo horizonte">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,13 +21,10 @@
         }
     </script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
     
-    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -48,19 +44,16 @@
     </script>
 </head>
 <body class="bg-white text-gray-900">
-    <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
                 <a href="index.html" class="flex items-center space-x-2">
                     <div class="w-10 h-10 cta-gradient rounded-full flex items-center justify-center">
                         <span class="text-white font-bold text-lg">M</span>
                     </div>
-                    <span class="font-bold text-xl text-gray-900">🏠 Meltranças BH</span>
+                    <span class="font-bold text-xl text-gray-900">Meltranças BH</span>
                 </a>
 
-                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Início</a>
                     <a href="sobre.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-pink transition-colors">Sobre</a>
@@ -69,243 +62,80 @@
                     <a href="contato.html" class="px-3 py-2 text-sm font-medium text-brand-pink border-b-2 border-brand-pink">Contato</a>
                 </nav>
 
-                <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="p-2 rounded-md text-gray-700 hover:text-brand-pink hover:bg-gray-100">
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-purple">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Início</a>
-                <a href="sobre.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Sobre</a>
-                <a href="servicos.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Serviços</a>
-                <a href="galeria.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-gray-100">Galeria</a>
-                <a href="contato.html" class="block px-3 py-2 text-base font-medium text-brand-pink bg-pink-50">Contato</a>
+        <nav id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Início</a>
+                <a href="sobre.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Sobre</a>
+                <a href="servicos.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Serviços</a>
+                <a href="galeria.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Galeria</a>
+                <a href="contato.html" class="block px-3 py-2 rounded-md text-base font-medium text-white cta-gradient">Contato</a>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-gradient py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Entre em <span class="gradient-text">Contato</span>
-                    </h1>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Estamos aqui para esclarecer suas dúvidas e agendar seu horário. Entre em contato conosco!
-                    </p>
-                </div>
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Entre em Contato</h1>
+                <p class="text-lg text-gray-600">Estamos prontos para te atender. Agende seu horário ou tire suas dúvidas.</p>
             </div>
-        </section>
-
-        <!-- Contact Form & Info -->
-        <section class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Contact Form -->
+            <div class="max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-lg p-8">
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
                     <div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Envie sua Mensagem</h2>
-                        <form id="contact-form" onsubmit="handleContactForm(event)" class="space-y-6">
-                            <div>
-                                <label for="name" class="form-label">Nome Completo *</label>
-                                <input type="text" id="name" name="name" required class="form-input" placeholder="Seu nome completo">
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="email" class="form-label">E-mail *</label>
-                                    <input type="email" id="email" name="email" required class="form-input" placeholder="seu@email.com">
-                                </div>
-                                
-                                <div>
-                                    <label for="phone" class="form-label">Telefone</label>
-                                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="(31) 99999-9999">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="service" class="form-label">Serviço de Interesse</label>
-                                <select id="service" name="service" class="form-input">
-                                    <option value="tranças-nago">Tranças Nagô</option>
-                                    <option value="box-braids">Box Braids</option>
-                                    <option value="tranças-boxeadora">Tranças Boxeadora</option>
-                                    <option value="fulani-braids">Fulani Braids</option>
-                                    <option value="outros">Outros</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="message" class="form-label">Mensagem *</label>
-                                <textarea id="message" name="message" required rows="5" class="form-input" placeholder="Conte-nos sobre o que você deseja..."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn-primary w-full">
-                                <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-                                Enviar Mensagem
-                            </button>
-                        </form>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nome Completo</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-pink focus:ring-brand-pink sm:text-sm form-input">
                     </div>
-
-                    <!-- Contact Info -->
                     <div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Informações de Contato</h2>
-                        
-                        <div class="space-y-6 mb-8">
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                        <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900 mb-1">Localização</h3>
-                                    <p class="text-gray-600">Belo Horizonte, MG</p>
-                                    <p class="text-sm text-gray-500 mt-1">Rua das Flores, 123 - Centro, Belo Horizonte - MG, 30000-000</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                        <i data-lucide="phone" class="w-6 h-6 text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900 mb-1">Telefone/WhatsApp</h3>
-                                    <p class="text-gray-600">(31) 93301-2152</p>
-                                    <p class="text-sm text-gray-500 mt-1">Clique no botão abaixo para falar conosco no WhatsApp</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                        <i data-lucide="instagram" class="w-6 h-6 text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900 mb-1">Instagram</h3>
-                                    <a href="https://www.instagram.com/meltrancasbh/" target="_blank" rel="noopener noreferrer" class="text-brand-purple hover:text-purple-700 transition-colors">@meltrancasbh</a>
-                                    <p class="text-sm text-gray-500 mt-1">Siga-nos para ver nossos trabalhos mais recentes</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                        <i data-lucide="clock" class="w-6 h-6 text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900 mb-1">Horário de Funcionamento</h3>
-                                    <div class="text-gray-600 text-sm space-y-1">
-                                        <p>Segunda a Sexta: 8h às 18h</p>
-                                        <p>Sábado: 8h às 16h</p>
-                                        <p>Domingo: Fechado</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="hero-gradient rounded-lg p-6">
-                            <h3 class="font-semibold text-gray-900 mb-4">Prefere falar pelo WhatsApp?</h3>
-                            <p class="text-gray-600 mb-4">
-                                Para um atendimento mais rápido, entre em contato conosco pelo WhatsApp. Estamos prontas para esclarecer suas dúvidas e agendar seu horário!
-                            </p>
-                            <button onclick="openWhatsApp('Olá! Gostaria de esclarecer algumas dúvidas e agendar um horário.')" class="inline-flex items-center space-x-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-green-500/25">
-                                <i data-lucide="message-circle" class="w-5 h-5"></i>
-                                <span>WhatsApp</span>
-                            </button>
-                        </div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-pink focus:ring-brand-pink sm:text-sm form-input">
                     </div>
-                </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Telefone (opcional)</label>
+                        <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-pink focus:ring-brand-pink sm:text-sm form-input">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-pink focus:ring-brand-pink sm:text-sm form-textarea"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="cta-gradient text-white font-semibold py-3 px-8 rounded-full shadow-lg hover-shadow transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                            Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FAQ Section -->
-        <section class="py-16 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        Perguntas Frequentes
-                    </h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Esclarecemos as dúvidas mais comuns sobre nossos serviços.
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-lg p-6 shadow-sm">
-                        <h3 class="font-semibold text-gray-900 mb-3">Quanto tempo dura o procedimento?</h3>
-                        <p class="text-gray-600">O tempo varia conforme o tipo de trança: Tranças Nagô (2-4h), Box Braids (4-6h), Tranças Boxeadora (1-2h), Fulani Braids (5-7h).</p>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg p-6 shadow-sm">
-                        <h3 class="font-semibold text-gray-900 mb-3">Quanto tempo as tranças duram?</h3>
-                        <p class="text-gray-600">Com cuidados adequados, as tranças podem durar de 6 a 12 semanas, dependendo do tipo e da manutenção.</p>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg p-6 shadow-sm">
-                        <h3 class="font-semibold text-gray-900 mb-3">Preciso agendar com antecedência?</h3>
-                        <p class="text-gray-600">Sim, recomendamos agendamento com pelo menos 1 semana de antecedência, especialmente para procedimentos mais longos.</p>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg p-6 shadow-sm">
-                        <h3 class="font-semibold text-gray-900 mb-3">Qual tipo de cabelo pode fazer tranças?</h3>
-                        <p class="text-gray-600">Todos os tipos de cabelo podem fazer tranças, mas avaliamos cada caso individualmente para recomendar o melhor estilo.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-16 cta-gradient">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
-                    Pronta para sua transformação?
-                </h2>
-                <p class="text-xl text-pink-100 mb-8 max-w-2xl mx-auto">
-                    <span class="text-black font-bold text-2xl">Entre em contato e agende seu horário. Estamos ansiosas para cuidar de você!</span>
-                </p>
-                <button onclick="openWhatsApp('Olá! Gostaria de agendar um horário.')" class="inline-flex items-center space-x-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-green-500/25">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i>
-                    <span>Agendar Horário</span>
-                </button>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Company Info -->
                 <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 cta-gradient rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold">M</span>
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 cta-gradient rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">M</span>
                         </div>
-                        <span class="font-bold text-lg">🏠 Meltranças BH</span>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        Estúdio especializado em tranças afro, valorizando a beleza natural dos cabelos crespos e cacheados.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/meltrancasbh/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-brand-pink transition-colors">
+                        <span class="font-bold text-xl text-white">Meltranças BH</span>
+                    </a>
+                    <p class="text-gray-400 text-sm">Estúdio de tranças afro em Belo Horizonte, especialista em beleza e autoestima.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.instagram.com/meltrancasbh/" target="_blank" class="text-gray-400 hover:text-brand-pink transition-colors">
                             <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" onclick="openWhatsApp('Olá! Gostaria de agendar um horário.'); return false;" class="text-gray-400 hover:text-brand-pink transition-colors">
+                            <i data-lucide="whatsapp" class="w-6 h-6"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Contact Info -->
                 <div>
                     <h3 class="font-semibold text-lg mb-4">Contato</h3>
                     <div class="space-y-3">
@@ -320,7 +150,6 @@
                     </div>
                 </div>
 
-                <!-- Links -->
                 <div>
                     <h3 class="font-semibold text-lg mb-4">Links Úteis</h3>
                     <div class="space-y-2">
@@ -336,7 +165,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="data/data.js"></script>
     <script src="js/main.js"></script>
 </body>
