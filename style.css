@@ -256,40 +256,47 @@ footer a:hover {
 
 /* Modal de Galeria */
 #gallery-modal {
-    transition: backdrop-filter 0.5s ease;
+    transition: all 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Efeito de blur no fundo do modal (quando visível) */
+/* Nova classe para o efeito de blur, aplicada pelo JS */
 .backdrop-blur-md {
-    backdrop-filter: blur(10px); /* Ajuste o valor para a intensidade do blur desejada */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com navegadores baseados em WebKit */
 }
 
-/* Efeito de blur sutil nas setas quando o mouse passa */
-#prev-btn, #next-btn {
+/* Efeito de blur sutil nas setas e no botão de fechar */
+#prev-btn, #next-btn, #close-modal {
+    position: absolute;
+    color: white;
+    z-index: 20; /* Para garantir que estejam acima da imagem principal */
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
     padding: 0.5rem;
     line-height: 1;
-    backdrop-filter: blur(0px); /* Ponto de partida */
-    transition: backdrop-filter 0.3s ease-in-out, background-color 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
 }
 
-#prev-btn:hover, #next-btn:hover {
-    backdrop-filter: blur(5px);
+#prev-btn:hover, #next-btn:hover, #close-modal:hover {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* Efeito de blur sutil no botão "X" de fechar */
+#prev-btn {
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#next-btn {
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 #close-modal {
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 50%;
-    padding: 0.5rem;
-    line-height: 1;
-    backdrop-filter: blur(0px);
-    transition: backdrop-filter 0.3s ease-in-out, background-color 0.3s ease;
-}
-
-#close-modal:hover {
-    backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.6);
+    top: 4%;
+    right: 4%;
 }
