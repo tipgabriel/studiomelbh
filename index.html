@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Studiomelbh" />
-    
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -62,7 +62,8 @@
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
-    <header class="shadow-sm sticky top-0 z-40">
+    <!-- Adicionei 'relative' ao header -->
+    <header class="shadow-sm sticky top-0 z-40 relative bg-white">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
             <div class="text-2xl font-bold">
                 <a href="#" class="flex items-center">
@@ -86,22 +87,26 @@
         </nav>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden shadow-lg py-4" role="dialog" aria-modal="true" aria-hidden="true">
+    <!-- mobile menu -->
+    <!-- Removi a classe 'hidden' inicial e as classes de sombra/padding/role, elas serão controladas via JS e CSS -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden" aria-hidden="true">
         <button id="mobile-menu-close" type="button" class="absolute top-4 right-4 p-3 focus:outline-none" aria-label="Fechar menu">
             <i class="fas fa-times text-2xl"></i>
         </button>
 
         <nav class="flex flex-col items-center justify-center min-h-screen space-y-4 pt-8">
-            <a href="#home" class="block px-6 py-2 hover:bg-pink-100">Início</a>
-            <a href="#sobre" class="block px-6 py-2 hover:bg-pink-100">Sobre</a>
-            <a href="#servicos" class="block px-6 py-2 hover:bg-pink-100">Serviços</a>
-            <a href="#portfolio" class="block px-6 py-2 hover:bg-pink-100">Portfólio</a>
-            <a href="#depoimentos" class="block px-6 py-2 hover:bg-pink-100">Depoimentos</a>
-            <a href="#contato" class="block px-6 py-2 hover:bg-pink-100">Contato</a>
+            <!-- Links do menu mobile - Sem alteração no texto -->
+            <a href="#home" class="block px-6 py-2 hover:bg-pink-100 text-lg">Início</a>
+            <a href="#sobre" class="block px-6 py-2 hover:bg-pink-100 text-lg">Sobre</a>
+            <a href="#servicos" class="block px-6 py-2 hover:bg-pink-100 text-lg">Serviços</a>
+            <a href="#portfolio" class="block px-6 py-2 hover:bg-pink-100 text-lg">Portfólio</a>
+            <a href="#depoimentos" class="block px-6 py-2 hover:bg-pink-100 text-lg">Depoimentos</a>
+            <a href="#contato" class="block px-6 py-2 hover:bg-pink-100 text-lg">Contato</a>
         </nav>
     </div>
 
     <main>
+        <!-- HOME -->
         <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('unha-alison-christine.webp');"></div>
             <div class="absolute inset-0 bg-black opacity-40"></div>
@@ -112,6 +117,7 @@
             </div>
         </section>
 
+        <!-- SOBRE -->
         <section id="sobre" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
@@ -129,6 +135,7 @@
             </div>
         </section>
 
+        <!-- SERVIÇOS -->
         <section id="servicos" class="py-16 md:py-24 bg-gray-50">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center mb-4">Nossos Serviços</h2>
@@ -160,22 +167,29 @@
             </div>
         </section>
 
+        <!-- PORTFÓLIO -->
         <section id="portfolio" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center mb-4">Nossos Trabalhos</h2>
                 <p class="text-xl text-center mb-12">Aqui você confere uma galeria do meu talento e da minha paixão por transformar cada detalhe em beleza única.</p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4]">
+                    <!-- Cada item do portfólio agora terá a classe 'gallery-item' e um 'data-img' -->
+                    <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4] cursor-pointer gallery-item" data-img="fulani-braids-close.webp">
                         <img src="fulani-braids-close.webp" alt="Fulani Braids" class="w-full h-full object-contain">
                     </div>
-                    <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4]">
+                    <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4] cursor-pointer gallery-item" data-img="https://source.unsplash.com/random/400x400/?nails,art">
                         <img src="https://source.unsplash.com/random/400x400/?nails,art" alt="Unhas Decoradas" class="w-full h-full object-contain">
+                    </div>
+                    <!-- Adicione mais itens de portfólio aqui com a classe `gallery-item` e `data-img` -->
+                    <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4] cursor-pointer gallery-item" data-img="unha-alison-christine.webp">
+                        <img src="unha-alison-christine.webp" alt="Unhas Decoradas" class="w-full h-full object-contain">
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- DEPOIMENTOS -->
         <section id="depoimentos" class="py-16 md:py-24 bg-gray-50">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center mb-4">O Que Nossas Clientes Dizem</h2>
@@ -216,6 +230,7 @@
             </div>
         </section>
 
+        <!-- CONTATO -->
         <section id="contato" class="py-16 md:py-24 bg-pink-50">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center mb-4">Fale Conosco e Agende Online</h2>
@@ -227,15 +242,15 @@
                         <form action="#" method="POST" class="space-y-4">
                             <div>
                                 <label for="name" class="block text-sm font-bold mb-2">Nome:</label>
-                                <input type="text" id="name" name="name" required placeholder="Seu nome" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
+                                <input type="text" id="name" name="name" required placeholder="Como podemos te chamar?" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-bold mb-2">Email:</label>
-                                <input type="email" id="email" name="email" required placeholder="Seu email" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
+                                <input type="email" id="email" name="email" required placeholder="Seu melhor email" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
                             </div>
                             <div>
                                 <label for="message" class="block text-sm font-bold mb-2">Mensagem:</label>
-                                <textarea id="message" name="message" required placeholder="Escreva sua mensagem aqui..." rows="5" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"></textarea>
+                                <textarea id="message" name="message" required placeholder="Conte como podemos te ajudar a realçar sua beleza" rows="5" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"></textarea>
                             </div>
                             <button type="submit" class="bg-pink-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-pink-700 transition-colors duration-300">Enviar Mensagem</button>
                         </form>
@@ -245,6 +260,7 @@
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="text-white bg-gray-800 py-8">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
             <div class="mb-4 md:mb-0">
@@ -256,7 +272,9 @@
         </div>
     </footer>
 
-    <div id="gallery-modal" class="hidden fixed inset-0 z-[100] bg-black bg-opacity-90 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-hidden="true">
+    <!-- GALERIA MODAL -->
+    <!-- Removido 'hidden' inicial. 'opacity-0' e 'pointer-events-none' para controlar via CSS/JS -->
+    <div id="gallery-modal" class="fixed inset-0 z-[100] bg-black bg-opacity-90 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" role="dialog" aria-modal="true" aria-hidden="true">
         <button id="close-modal" type="button" class="gallery-btn gallery-close absolute top-4 right-4 z-20 text-white text-3xl leading-none opacity-70 hover:opacity-100 transition-opacity duration-300" aria-label="Fechar galeria">
             <i class="fas fa-times"></i>
         </button>
