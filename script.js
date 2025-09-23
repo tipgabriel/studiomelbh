@@ -9,12 +9,9 @@ if (menuButton && mobileMenu) {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Fechar o menu mobile ao clicar em um link
     mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-            }
+            mobileMenu.classList.add('hidden');
         });
     });
 }
@@ -42,37 +39,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Funcionalidade da Galeria
+// Lógica da Galeria de Imagens
 document.addEventListener('DOMContentLoaded', () => {
-    const portfolioItems = Array.from(document.querySelectorAll('.portfolio-item img'));
-    const modal = document.getElementById('gallery-modal');
+    const portfolioItems = document.querySelectorAll('.portfolio-item img');
+    const galleryModal = document.getElementById('gallery-modal');
     const modalImage = document.getElementById('modal-image');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const closeModalBtn = document.getElementById('close-modal');
 
-    let currentIndex = 0;
+    let currentImageIndex = 0;
+    const images = Array.from(portfolioItems).map(item => item.src);
 
     const openModal = (index) => {
-        currentIndex = index;
-        modalImage.src = portfolioItems[currentIndex].src;
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Evita scroll do corpo
+        currentImageIndex = index;
+        modalImage.src = images[currentImageIndex];
+        galleryModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
-        modal.classList.add('hidden');
-        document.body.style.overflow = ''; // Habilita o scroll novamente
+        galleryModal.classList.add('hidden');
+        document.body.style.overflow = '';
     };
 
-    const showNext = () => {
-        currentIndex = (currentIndex + 1) % portfolioItems.length;
-        modalImage.src = portfolioItems[currentIndex].src;
+    const showNextImage = () => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        modalImage.src = images[currentImageIndex];
     };
 
-    const showPrev = () => {
-        currentIndex = (currentIndex - 1 + portfolioItems.length) % portfolioItems.length;
-        modalImage.src = portfolioItems[currentIndex].src;
+    const showPrevImage = () => {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        modalImage.src = images[currentImageIndex];
     };
 
     // Eventos de clique para abrir o modal
@@ -82,20 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Eventos de clique nos botões de navegação
     if (prevBtn) {
-        prevBtn.addEventListener('click', showPrev);
+        prevBtn.addEventListener('click', showPrevImage);
     }
     if (nextBtn) {
-        nextBtn.addEventListener('click', showNext);
+        nextBtn.addEventListener('click', showNextImage);
     }
-    
-
-    // Evento para fechar o modal
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', closeModal);
     }
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
+
+    // Fechar o modal ao clicar fora da imagem
+    if (galleryModal) {
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
                 closeModal();
             }
         });
@@ -103,11 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navegação com setas do teclado
     document.addEventListener('keydown', (e) => {
-        if (modal && !modal.classList.contains('hidden')) {
+        if (galleryModal && !galleryModal.classList.contains('hidden')) {
             if (e.key === 'ArrowLeft') {
-                showPrev();
+                showPrevImage();
             } else if (e.key === 'ArrowRight') {
-                showNext();
+                showNextImage();
             } else if (e.key === 'Escape') {
                 closeModal();
             }
