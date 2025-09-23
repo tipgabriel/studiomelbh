@@ -1,26 +1,95 @@
-/* style.css */
+/*
+  StudioMelBH - Desconstruindo o Design
 
-/* Animação para o botão do WhatsApp */
-.animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  - Paleta de Cores: roxo e rosa para uma vibe de classe, mistério e paixão.
+  - Animação de Fundo: degradê que se move, dando um ar dinâmico e "vivo" para a página.
+  - Imagens: uso da API do Unsplash para preencher o layout com fotos aleatórias e temáticas.
+  - Botão WhatsApp: ícone pulsante no canto direito, funcionando como um farol para o contato direto.
+*/
+
+:root {
+  --cor-principal: #6a0dad; /* Roxo profundo, mistério */
+  --cor-secundaria: #ff69b4; /* Rosa da Melissa, vibrante */
+  --cor-de-fundo-degrade: linear-gradient(-45deg, #4b0082, #8a2be2, #ff69b4, #ff1493);
+  --cor-texto-claro: #f5f5f5;
+  --cor-texto-escuro: #1a1a1a;
 }
 
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+/* Base do Site */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cor-de-fundo-degrade);
+  background-size: 400% 400%;
+  animation: background-animado 20s ease infinite;
+  color: var(--cor-texto-claro);
+  transition: all 0.5s ease-in-out;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Animação para o background se mover lentamente */
+@keyframes background-animado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Estilos para a seção Hero (Home) para garantir que a imagem de fundo cubra a área) */
 #home {
-    background-size: cover;
-    background-position: center;
+  background-size: cover;
+  background-position: center;
 }
 
-/* Estilos para a navegação sticky e suave */
-html {
-    scroll-behavior: smooth;
+/* Estilos de cor globais */
+.text-gray-800, .text-gray-700 {
+  color: var(--cor-texto-claro) !important;
+}
+
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.text-gray-900 {
+  color: var(--cor-texto-claro) !important;
+}
+
+.text-pink-600, .hover\:text-pink-600:hover, .text-green-500 {
+  color: var(--cor-secundaria) !important;
+}
+
+.bg-pink-600 {
+  background-color: var(--cor-secundaria) !important;
+}
+
+/* Ajuste do Botão do WhatsApp para o canto direito e pulsação customizada */
+.whatsapp-float {
+  right: 20px; /* Altera a posição para a direita */
+  left: auto;
+  bottom: 20px;
+  animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Animação de pulso do WhatsApp */
+@keyframes pulse-whatsapp {
+  0% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(255, 105, 180, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0); }
 }
