@@ -111,9 +111,15 @@ header nav a:hover {
 }
 
 /* Imagens */
+/* Removendo o border-radius global para que a div .image-container o controle */
 img {
-  border-radius: 8px; /* Bordas arredondadas para as imagens */
+  border-radius: 0; /* As bordas arredondadas serão controladas pelo container */
+  width: 100%; /* Garante que a imagem preencha o container */
+  height: 100%; /* Garante que a imagem preencha o container */
+  object-fit: contain; /* Faz a imagem se ajustar perfeitamente sem cortar */
+  object-position: center; /* Centraliza a imagem no container */
 }
+
 
 /* Seção Home */
 #home {
@@ -126,11 +132,12 @@ img {
 }
 
 /* Cards de Serviço e Portfólio */
-/* Removendo os efeitos de hover do card */
 .card, .relative, .bg-white.p-8.rounded-lg.shadow-md {
   background-color: #0d0d0d !important; /* Fundo mais escuro para cards */
   border: 1px solid var(--cor-borda-clara);
   transition: box-shadow 0.3s ease-in-out;
+  border-radius: 8px; /* Adicionando o border-radius aqui para o card */
+  overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
 }
 
 .card:hover, .relative:hover, .bg-white.p-8.rounded-lg.shadow-md:hover {
@@ -156,10 +163,19 @@ img {
     }
 }
 
-/* Limita a altura das imagens do portfólio e serviços e as alinha ao topo */
-#servicos .grid img, #portfolio .grid img {
-    height: 300px; /* Altura ideal para a visualização */
-    object-position: top;
+/* Container para as imagens nos cards de serviço e portfólio */
+/* Isso cria uma área com altura fixa para a imagem se ajustar dentro */
+#servicos .grid > div > img, /* para as imagens diretas dentro dos cards de serviços */
+#portfolio .grid > div > img { /* para as imagens diretas dentro dos cards de portfólio */
+    display: block; /* Garante que a imagem se comporte como bloco */
+    width: 100%;
+    height: 300px; /* Altura fixa para todos os espaços de imagem na grade */
+    object-fit: contain; /* Faz a imagem se ajustar perfeitamente sem cortar */
+    object-position: center; /* Centraliza a imagem dentro do container */
+    padding: 10px; /* Adiciona um pequeno padding para imagens que ficarem muito pequenas e centralizadas */
+    background-color: var(--cor-fundo-principal); /* Fundo para o container da imagem caso ela não preencha tudo */
+    border-top-left-radius: 8px; /* Arredonda as bordas superiores do container da imagem */
+    border-top-right-radius: 8px;
 }
 
 /* Texto dentro dos cards */
