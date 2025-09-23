@@ -54,12 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const openModal = (index) => {
         currentImageIndex = index;
         modalImage.src = images[currentImageIndex];
-        galleryModal.style.display = 'flex';
+        galleryModal.style.display = 'flex'; // Usando display flex
         document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
-        galleryModal.style.display = 'none';
+        galleryModal.style.display = 'none'; // Escondendo o modal
         document.body.style.overflow = '';
     };
 
