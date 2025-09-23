@@ -85,23 +85,10 @@ header nav a:hover {
   color: var(--cor-link-hover) !important;
 }
 
-/* Menu Mobile (Ajuste Final para não empurrar) */
 #mobile-menu {
-  position: fixed; /* Fixa o menu na tela */
-  top: 6rem; /* A altura do header, para começar abaixo dele */
-  left: 0;
-  right: 0;
   background-color: var(--cor-fundo-principal) !important;
   box-shadow: 0 2px 5px var(--cor-sombra);
   border-top: 1px solid var(--cor-borda-clara);
-  z-index: 30; /* Abaixo do header */
-  /* Propriedade para evitar o "empurrão" */
-  transition: transform 0.3s ease-out;
-  transform: translateY(-150%);
-}
-
-#mobile-menu.is-open {
-  transform: translateY(0);
 }
 
 #mobile-menu a {
@@ -263,65 +250,35 @@ footer a:hover {
 
 /* Modal de Galeria */
 #gallery-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Para compatibilidade */
+    transition: backdrop-filter 0.5s ease;
 }
 
-/* Imagem do Modal */
-#modal-image {
-  position: relative;
-  z-index: 10; /* Imagem fica abaixo dos botões */
-  max-width: 100%;
-  max-height: 90vh;
-  object-fit: contain;
-  border-radius: 8px;
+/* Efeito de blur no fundo do modal (quando visível) */
+#gallery-modal.backdrop-blur-md {
+    backdrop-filter: blur(10px); /* Ajuste o valor para a intensidade do blur desejada */
 }
 
-/* Setas de Navegação e Botão de Fechar */
-#prev-btn, #next-btn, #close-modal {
-    position: absolute;
-    color: white;
-    z-index: 20; /* Garantido que estão acima da imagem */
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo sutil */
-    border-radius: 50%;
-    padding: 0.7rem; /* Aumenta um pouco o padding para um clique mais fácil */
-    line-height: 1;
-    font-size: 1.5rem; /* Ícone um pouco maior */
-    transition: all 0.3s ease;
-    display: flex; /* Para centralizar o ícone */
-    align-items: center;
-    justify-content: center;
+/* Efeito de blur sutil nas setas quando o mouse passa */
+#prev-btn, #next-btn {
+    backdrop-filter: blur(0px); /* Ponto de partida */
+    transition: backdrop-filter 0.3s ease-in-out;
 }
 
-#prev-btn:hover, #next-btn:hover, #close-modal:hover {
-    background-color: rgba(255, 255, 255, 0.4); /* Hover mais visível */
+#prev-btn:hover, #next-btn:hover {
+    backdrop-filter: blur(5px);
 }
 
-/* Posição das Setas e Botão de Fechar */
-#prev-btn {
-    left: 6%; /* Movido para dentro */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#next-btn {
-    right: 6%; /* Movido para dentro */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
+/* Efeito de blur sutil no botão "X" de fechar */
 #close-modal {
-    top: 4%; /* Mantido no topo */
-    right: 6%; /* Movido para dentro */
-    font-size: 2rem; /* Ícone 'X' um pouco maior */
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    padding: 0.5rem;
+    line-height: 1;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+#close-modal:hover {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.6);
 }
