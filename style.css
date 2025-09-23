@@ -65,12 +65,12 @@ header {
   box-shadow: 0 2px 5px var(--cor-sombra);
 }
 
-/* Imagem da logo no topo com bordas sutis e sem sombra */
+/* Imagem da logo no topo sem efeitos */
 header img {
-    border-radius: 8px; /* Bordas arredondadas */
-    border: 1px solid var(--cor-borda-clara); /* Borda sutil */
-    padding: 2px;
-    box-shadow: none; /* Removendo a sombra */
+    border-radius: 8px; /* Bordas arredondadas sutis */
+    /* Removendo a borda e padding para uma aparência mais limpa */
+    border: none;
+    padding: 0;
 }
 
 header nav a {
@@ -128,7 +128,6 @@ header nav a:hover {
 }
 
 /* Imagens */
-/* Ajuste global para as imagens */
 img {
   border-radius: 8px; /* Bordas arredondadas para as imagens em geral */
 }
@@ -143,18 +142,15 @@ img {
   opacity: 0.6; /* Aumentar um pouco a opacidade para o texto se destacar */
 }
 
-/* Cards de Serviço e Portfólio */
-/* Removendo os efeitos de hover do card */
-.card, .relative, .bg-white.p-8.rounded-lg.shadow-md {
-  background-color: #0d0d0d !important; /* Fundo mais escuro para cards */
-  border: 1px solid var(--cor-borda-clara);
-  transition: box-shadow 0.3s ease-in-out;
-  border-radius: 8px; /* Adicionando o border-radius aqui para o card */
-  overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
+/* Cards de Serviço e Portfólio com hover sutil */
+.service-card, .portfolio-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-.card:hover, .relative:hover, .bg-white.p-8.rounded-lg.shadow-md:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+.service-card:hover, .portfolio-item:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra mais destacada */
 }
 
 /* Estilo da grade flexível para serviços e portfólio */
@@ -176,13 +172,13 @@ img {
     }
 }
 
-/* Ajusta as imagens para preencherem o espaço e as alinha ao topo */
-#servicos .grid img, #portfolio .grid img {
+/* Ajusta as imagens para preencherem o espaço e as alinha ao centro para focar nos rostos */
+.service-img, .portfolio-img {
     height: 300px; /* Altura ideal para a visualização, ajuste conforme preferir */
     object-fit: cover; /* Faz a imagem preencher o espaço, mas pode cortar */
-    object-position: center; /* AGORA CENTRALIZANDO A IMAGEM */
+    object-position: center; /* CENTRALIZANDO A IMAGEM */
+    cursor: pointer; /* Adiciona o cursor de clique nas imagens */
 }
-
 
 /* Texto dentro dos cards */
 .text-gray-700 { /* Ajuste para o texto dentro dos cards */
