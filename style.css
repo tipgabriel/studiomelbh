@@ -287,35 +287,41 @@ footer a:hover {
   border-radius: 8px;
 }
 
-/* Efeito de blur sutil nas setas e no botão de fechar */
+/* Setas de Navegação e Botão de Fechar */
 #prev-btn, #next-btn, #close-modal {
     position: absolute;
     color: white;
-    z-index: 20; /* Aumentado para garantir que os botões fiquem acima da imagem */
-    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 20; /* Garantido que estão acima da imagem */
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo sutil */
     border-radius: 50%;
-    padding: 0.5rem;
+    padding: 0.7rem; /* Aumenta um pouco o padding para um clique mais fácil */
     line-height: 1;
+    font-size: 1.5rem; /* Ícone um pouco maior */
     transition: all 0.3s ease;
+    display: flex; /* Para centralizar o ícone */
+    align-items: center;
+    justify-content: center;
 }
 
 #prev-btn:hover, #next-btn:hover, #close-modal:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.4); /* Hover mais visível */
 }
 
+/* Posição das Setas e Botão de Fechar */
 #prev-btn {
-    left: 4%;
+    left: 6%; /* Movido para dentro */
     top: 50%;
     transform: translateY(-50%);
 }
 
 #next-btn {
-    right: 4%;
+    right: 6%; /* Movido para dentro */
     top: 50%;
     transform: translateY(-50%);
 }
 
 #close-modal {
-    top: 4%;
-    right: 4%;
+    top: 4%; /* Mantido no topo */
+    right: 6%; /* Movido para dentro */
+    font-size: 2rem; /* Ícone 'X' um pouco maior */
 }
