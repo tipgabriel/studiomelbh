@@ -10,13 +10,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
 
 :root {
-  --cor-fundo-principal: #000000; /* Preto sólido, como a logo */
-  --cor-texto-principal: #F5F5F5; /* Branco suave para legibilidade */
-  --cor-destaque-roxo: #8A2BE2; /* Roxo da borboleta */
-  --cor-destaque-rosa: #FF69B4; /* Rosa/lilás complementar */
-  --cor-link-hover: #DDA0DD; /* Lilás mais claro para hover */
-  --cor-borda-clara: rgba(255, 255, 255, 0.1); /* Bordas sutis */
-  --cor-sombra: rgba(0, 0, 0, 0.6); /* Sombras mais escuras */
+  --cor-fundo-principal: #000000;
+  --cor-texto-principal: #F5F5F5;
+  --cor-destaque-roxo: #8A2BE2;
+  --cor-destaque-rosa: #FF69B4;
+  --cor-link-hover: #DDA0DD;
+  --cor-borda-clara: rgba(255, 255, 255, 0.1);
+  --cor-sombra: rgba(0, 0, 0, 0.6);
 }
 
 /* Base do Site */
@@ -25,27 +25,27 @@ html {
 }
 
 body {
-  background-color: var(--cor-fundo-principal); /* Fundo preto */
-  color: var(--cor-texto-principal); /* Texto principal branco */
-  font-family: 'Montserrat', sans-serif; /* Fonte legível para o corpo */
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  font-family: 'Montserrat', sans-serif;
   transition: all 0.5s ease-in-out;
 }
 
 /* Títulos com a fonte da logo */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif; /* Fonte elegante para títulos */
-  color: var(--cor-texto-principal); /* Títulos brancos */
+  font-family: 'Playfair Display', serif;
+  color: var(--cor-texto-principal);
   font-weight: 700;
 }
 
 /* Alterando a fonte do H1 para um estilo de beleza */
 #home h1 {
-    font-family: 'Dancing Script', cursive;
-    text-transform: none;
-    letter-spacing: 0;
-    color: var(--cor-texto-principal);
-    text-shadow: 2px 2px 4px var(--cor-sombra);
-    font-weight: 700;
+  font-family: 'Dancing Script', cursive;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--cor-texto-principal);
+  text-shadow: 2px 2px 4px var(--cor-sombra);
+  font-weight: 700;
 }
 
 /* Link padrão */
@@ -61,23 +61,21 @@ a:hover {
 
 /* Header */
 header {
-  background-color: var(--cor-fundo-principal) !important; /* Fundo do header preto */
+  background-color: var(--cor-fundo-principal) !important;
   box-shadow: 0 2px 5px var(--cor-sombra);
 }
 
-/* Imagem da logo no topo sem efeitos */
 header img {
-    border-radius: 8px; /* Bordas arredondadas sutis */
-    /* Removendo a borda e padding para uma aparência mais limpa */
-    border: none;
-    padding: 0;
+  border-radius: 8px;
+  border: none;
+  padding: 0;
 }
 
 header nav a {
-  color: var(--cor-texto-principal); /* Links do nav brancos */
+  color: var(--cor-texto-principal);
 }
 
-header nav a.text-pink-600 { /* Link ativo ou principal */
+header nav a.text-pink-600 {
   color: var(--cor-destaque-rosa) !important;
 }
 
@@ -85,19 +83,36 @@ header nav a:hover {
   color: var(--cor-link-hover) !important;
 }
 
+/* Menu Mobile */
 #mobile-menu {
-  background-color: var(--cor-fundo-principal) !important;
-  box-shadow: 0 2px 5px var(--cor-sombra);
-  border-top: 1px solid var(--cor-borda-clara);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#mobile-menu.show {
+  display: flex;
 }
 
 #mobile-menu a {
   color: var(--cor-texto-principal) !important;
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 
 #mobile-menu a:hover {
-  background-color: rgba(255, 255, 255, 0.05); /* Fundo sutil ao passar o mouse */
   color: var(--cor-link-hover) !important;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
 }
 
 /* Botões e elementos de destaque */
@@ -112,24 +127,24 @@ header nav a:hover {
 
 /* Botão de WhatsApp do formulário com hover sutil */
 .bg-green-500 {
-    background-color: #25D366 !important;
+  background-color: #25D366 !important;
 }
 
 .bg-green-500:hover {
-    background-color: #1DA851 !important; /* Um verde um pouco mais escuro, mantendo a identidade */
+  background-color: #1DA851 !important;
 }
 
 /* Seções com fundos mais claros, mas ainda escuros */
 .bg-white, .bg-gray-50, .bg-pink-50 {
-  background-color: #1a1a1a !important; /* Um cinza bem escuro para contraste sutil */
-  border-radius: 8px; /* Cantos arredondados */
+  background-color: #1a1a1a !important;
+  border-radius: 8px;
   box-shadow: 0 4px 10px var(--cor-sombra);
-  margin-bottom: 2rem; /* Espaçamento entre seções */
+  margin-bottom: 2rem;
 }
 
 /* Imagens */
 img {
-  border-radius: 8px; /* Bordas arredondadas para as imagens em geral */
+  border-radius: 8px;
 }
 
 /* Seção Home */
@@ -138,51 +153,51 @@ img {
   background-position: center;
 }
 
-#home .bg-black { /* Sobreposição escura da imagem de fundo */
-  opacity: 0.6; /* Aumentar um pouco a opacidade para o texto se destacar */
+#home .bg-black {
+  opacity: 0.6;
 }
 
 /* Cards de Serviço e Portfólio com hover sutil */
 .service-card, .portfolio-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .service-card:hover, .portfolio-item:hover {
-    transform: translateY(-5px); /* Efeito de elevação */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Sombra mais destacada e com direção */
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilo da grade flexível para serviços e portfólio */
 #servicos .grid, #portfolio .grid {
-    display: grid;
-    gap: 2.5rem;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 @media (min-width: 768px) {
-    #servicos .grid, #portfolio .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  #servicos .grid, #portfolio .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1024px) {
-    #servicos .grid, #portfolio .grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+  #servicos .grid, #portfolio .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-/* Ajusta as imagens para preencherem o espaço e as alinha ao centro para focar nos rostos */
+/* Ajusta as imagens para preencherem o espaço e as alinha ao centro */
 .service-img, .portfolio-item img {
-    height: 300px; /* Altura ideal para a visualização, ajuste conforme preferir */
-    object-fit: cover; /* Faz a imagem preencher o espaço, mas pode cortar */
-    object-position: center; /* CENTRALIZANDO A IMAGEM */
-    cursor: pointer; /* Adiciona o cursor de clique nas imagens */
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
 }
 
 /* Texto dentro dos cards */
-.text-gray-700 { /* Ajuste para o texto dentro dos cards */
-  color: rgba(255, 255, 255, 0.8) !important; /* Um pouco mais claro */
+.text-gray-700 {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* Preços */
@@ -192,7 +207,7 @@ span.text-pink-600 {
 
 /* Formulário */
 input[type="text"], input[type="email"], textarea {
-  background-color: #2a2a2a; /* Fundo escuro para campos de input */
+  background-color: #2a2a2a;
   border: 1px solid var(--cor-borda-clara);
   color: var(--cor-texto-principal);
 }
@@ -204,16 +219,16 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* Footer */
 footer {
-  background-color: #0d0d0d; /* Fundo do footer mais escuro */
+  background-color: #0d0d0d;
   border-top: 1px solid var(--cor-borda-clara);
 }
 
 footer a {
-  color: var(--cor-texto-principal); /* Ícones sociais brancos */
+  color: var(--cor-texto-principal);
 }
 
 footer a:hover {
-  color: var(--cor-destaque-rosa); /* Hover rosa nos ícones */
+  color: var(--cor-destaque-rosa);
 }
 
 /* Botão flutuante do WhatsApp */
@@ -221,7 +236,7 @@ footer a:hover {
   right: 20px;
   left: auto;
   bottom: 20px;
-  background-color: #25D366 !important; /* Verde original do WhatsApp */
+  background-color: #25D366 !important;
   color: white !important;
   border-radius: 50%;
   padding: 15px;
@@ -236,49 +251,30 @@ footer a:hover {
   transform: scale(1.1);
 }
 
-/* Animação de pulso do WhatsApp */
 @keyframes pulse-whatsapp {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } /* Verde do WhatsApp */
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
   70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/*
-    Ajustes para a galeria de imagens
-    ----------------------------------------------------------------
-*/
-
-/* Modal de Galeria */
+/* ----------------------------------------------------------------
+   Ajustes para a galeria de imagens
+---------------------------------------------------------------- */
 #gallery-modal {
-    transition: backdrop-filter 0.5s ease;
+  transition: backdrop-filter 0.5s ease;
 }
 
-/* Efeito de blur no fundo do modal (quando visível) */
-#gallery-modal.backdrop-blur-md {
-    backdrop-filter: blur(10px); /* Ajuste o valor para a intensidade do blur desejada */
+/* Blur fixo atrás das setas e do X */
+#prev-btn, #next-btn, #close-modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  padding: 0.5rem;
+  line-height: 1;
+  backdrop-filter: blur(6px);
+  transition: backdrop-filter 0.3s ease-in-out, background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Efeito de blur sutil nas setas quando o mouse passa */
-#prev-btn, #next-btn {
-    backdrop-filter: blur(0px); /* Ponto de partida */
-    transition: backdrop-filter 0.3s ease-in-out;
-}
-
-#prev-btn:hover, #next-btn:hover {
-    backdrop-filter: blur(5px);
-}
-
-/* Efeito de blur sutil no botão "X" de fechar */
-#close-modal {
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 50%;
-    padding: 0.5rem;
-    line-height: 1;
-    backdrop-filter: blur(0px);
-    transition: backdrop-filter 0.3s ease-in-out, background-color 0.3s ease;
-}
-
-#close-modal:hover {
-    backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.6);
+#prev-btn:hover, #next-btn:hover, #close-modal:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: scale(1.1);
 }
