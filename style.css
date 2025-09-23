@@ -150,7 +150,7 @@ img {
 
 .service-card:hover, .portfolio-item:hover {
     transform: translateY(-5px); /* Efeito de elevação */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra mais destacada */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Sombra mais destacada e com direção */
 }
 
 /* Estilo da grade flexível para serviços e portfólio */
@@ -173,7 +173,7 @@ img {
 }
 
 /* Ajusta as imagens para preencherem o espaço e as alinha ao centro para focar nos rostos */
-.service-img, .portfolio-img {
+.service-img, .portfolio-item img {
     height: 300px; /* Altura ideal para a visualização, ajuste conforme preferir */
     object-fit: cover; /* Faz a imagem preencher o espaço, mas pode cortar */
     object-position: center; /* CENTRALIZANDO A IMAGEM */
@@ -241,4 +241,44 @@ footer a:hover {
   0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } /* Verde do WhatsApp */
   70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/*
+    Ajustes para a galeria de imagens
+    ----------------------------------------------------------------
+*/
+
+/* Modal de Galeria */
+#gallery-modal {
+    transition: backdrop-filter 0.5s ease;
+}
+
+/* Efeito de blur no fundo do modal (quando visível) */
+#gallery-modal.backdrop-blur-md {
+    backdrop-filter: blur(10px); /* Ajuste o valor para a intensidade do blur desejada */
+}
+
+/* Efeito de blur sutil nas setas quando o mouse passa */
+#prev-btn, #next-btn {
+    backdrop-filter: blur(0px); /* Ponto de partida */
+    transition: backdrop-filter 0.3s ease-in-out;
+}
+
+#prev-btn:hover, #next-btn:hover {
+    backdrop-filter: blur(5px);
+}
+
+/* Efeito de blur sutil no botão "X" de fechar */
+#close-modal {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    padding: 0.5rem;
+    line-height: 1;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+#close-modal:hover {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.6);
 }
