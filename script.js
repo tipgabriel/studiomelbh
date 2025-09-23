@@ -41,7 +41,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Lógica da Galeria de Imagens
 document.addEventListener('DOMContentLoaded', () => {
-    const portfolioItems = document.querySelectorAll('.portfolio-item img');
+    const portfolioItems = document.querySelectorAll('.portfolio-item'); // Seleciona os itens do portfólio
     const galleryModal = document.getElementById('gallery-modal');
     const modalImage = document.getElementById('modal-image');
     const prevBtn = document.getElementById('prev-btn');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('close-modal');
 
     let currentImageIndex = 0;
-    const images = Array.from(portfolioItems).map(item => item.src);
+    const images = Array.from(portfolioItems).map(item => item.querySelector('img').src); // Extrai as URLs das imagens
 
     const openModal = (index) => {
         currentImageIndex = index;
