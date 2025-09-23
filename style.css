@@ -65,11 +65,12 @@ header {
   box-shadow: 0 2px 5px var(--cor-sombra);
 }
 
-/* Imagem da logo no topo com bordas sutis */
+/* Imagem da logo no topo com bordas sutis e sem sombra */
 header img {
     border-radius: 8px; /* Bordas arredondadas */
     border: 1px solid var(--cor-borda-clara); /* Borda sutil */
     padding: 2px;
+    box-shadow: none; /* Removendo a sombra */
 }
 
 header nav a {
@@ -179,7 +180,7 @@ img {
 #servicos .grid img, #portfolio .grid img {
     height: 300px; /* Altura ideal para a visualização, ajuste conforme preferir */
     object-fit: cover; /* Faz a imagem preencher o espaço, mas pode cortar */
-    object-position: top; /* Garante que o corte seja feito a partir do topo */
+    object-position: center; /* AGORA CENTRALIZANDO A IMAGEM */
 }
 
 
