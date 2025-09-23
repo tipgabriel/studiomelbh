@@ -1,191 +1,220 @@
 /*
-  StudioMelBH - Identidade Visual Aprimorada
+  StudioMelBH - Identidade Visual Aprimorada
 
-  - Foco em replicar a identidade da logo para o site.
-  - Fundo escuro/preto com detalhes em roxo/rosa.
-  - Fontes elegantes e legíveis.
+  - Foco em replicar a identidade da logo para o site.
+  - Fundo escuro/preto com detalhes em roxo/rosa.
+  - Fontes elegantes e legíveis.
 */
 
 /* Importação de Fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+/* Adicionando a nova fonte para o H1 e mantendo as originais para o resto */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Major+Mono+Display&display=swap');
 
 :root {
-  --cor-fundo-principal: #000000; /* Preto sólido, como a logo */
-  --cor-texto-principal: #F5F5F5; /* Branco suave para legibilidade */
-  --cor-destaque-roxo: #8A2BE2; /* Roxo da borboleta */
-  --cor-destaque-rosa: #FF69B4; /* Rosa/lilás complementar */
-  --cor-link-hover: #DDA0DD; /* Lilás mais claro para hover */
-  --cor-borda-clara: rgba(255, 255, 255, 0.1); /* Bordas sutis */
-  --cor-sombra: rgba(0, 0, 0, 0.6); /* Sombras mais escuras */
+  --cor-fundo-principal: #000000; /* Preto sólido, como a logo */
+  --cor-texto-principal: #F5F5F5; /* Branco suave para legibilidade */
+  --cor-destaque-roxo: #8A2BE2; /* Roxo da borboleta */
+  --cor-destaque-rosa: #FF69B4; /* Rosa/lilás complementar */
+  --cor-link-hover: #DDA0DD; /* Lilás mais claro para hover */
+  --cor-borda-clara: rgba(255, 255, 255, 0.1); /* Bordas sutis */
+  --cor-sombra: rgba(0, 0, 0, 0.6); /* Sombras mais escuras */
 }
 
 /* Base do Site */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--cor-fundo-principal); /* Fundo preto */
-  color: var(--cor-texto-principal); /* Texto principal branco */
-  font-family: 'Montserrat', sans-serif; /* Fonte legível para o corpo */
-  transition: all 0.5s ease-in-out;
+  background-color: var(--cor-fundo-principal); /* Fundo preto */
+  color: var(--cor-texto-principal); /* Texto principal branco */
+  font-family: 'Montserrat', sans-serif; /* Fonte legível para o corpo */
+  transition: all 0.5s ease-in-out;
 }
 
 /* Títulos com a fonte da logo */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif; /* Fonte elegante para títulos */
-  color: var(--cor-texto-principal); /* Títulos brancos */
-  font-weight: 700;
+  font-family: 'Playfair Display', serif; /* Fonte elegante para títulos */
+  color: var(--cor-texto-principal); /* Títulos brancos */
+  font-weight: 700;
+}
+
+/* Alterando a fonte do H1 conforme o pedido */
+h1 {
+    font-family: 'Major Mono Display', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cor-texto-principal);
+    text-shadow: 2px 2px 4px var(--cor-sombra);
 }
 
 /* Link padrão */
 a {
-  color: var(--cor-destaque-roxo);
-  text-decoration: none;
-  transition: color 0.3s ease;
+  color: var(--cor-destaque-roxo);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--cor-link-hover);
+  color: var(--cor-link-hover);
 }
 
 /* Header */
 header {
-  background-color: var(--cor-fundo-principal) !important; /* Fundo do header preto */
-  box-shadow: 0 2px 5px var(--cor-sombra);
+  background-color: var(--cor-fundo-principal) !important; /* Fundo do header preto */
+  box-shadow: 0 2px 5px var(--cor-sombra);
 }
 
 header nav a {
-  color: var(--cor-texto-principal); /* Links do nav brancos */
+  color: var(--cor-texto-principal); /* Links do nav brancos */
 }
 
 header nav a.text-pink-600 { /* Link ativo ou principal */
-  color: var(--cor-destaque-rosa) !important;
+  color: var(--cor-destaque-rosa) !important;
 }
 
 header nav a:hover {
-  color: var(--cor-link-hover) !important;
+  color: var(--cor-link-hover) !important;
 }
 
 #mobile-menu {
-  background-color: var(--cor-fundo-principal) !important;
-  box-shadow: 0 2px 5px var(--cor-sombra);
-  border-top: 1px solid var(--cor-borda-clara);
+  background-color: var(--cor-fundo-principal) !important;
+  box-shadow: 0 2px 5px var(--cor-sombra);
+  border-top: 1px solid var(--cor-borda-clara);
 }
 
 #mobile-menu a {
-  color: var(--cor-texto-principal) !important;
+  color: var(--cor-texto-principal) !important;
 }
 
 #mobile-menu a:hover {
-  background-color: rgba(255, 255, 255, 0.05); /* Fundo sutil ao passar o mouse */
-  color: var(--cor-link-hover) !important;
+  background-color: rgba(255, 255, 255, 0.05); /* Fundo sutil ao passar o mouse */
+  color: var(--cor-link-hover) !important;
 }
 
 /* Botões e elementos de destaque */
 .bg-pink-600 {
-  background-color: var(--cor-destaque-rosa) !important;
-  color: var(--cor-texto-principal) !important;
+  background-color: var(--cor-destaque-rosa) !important;
+  color: var(--cor-texto-principal) !important;
 }
 
 .bg-pink-600:hover {
-  background-color: var(--cor-destaque-roxo) !important;
+  background-color: var(--cor-destaque-roxo) !important;
 }
 
 /* Seções com fundos mais claros, mas ainda escuros */
 .bg-white, .bg-gray-50, .bg-pink-50 {
-  background-color: #1a1a1a !important; /* Um cinza bem escuro para contraste sutil */
-  border-radius: 8px; /* Cantos arredondados */
-  box-shadow: 0 4px 10px var(--cor-sombra);
-  margin-bottom: 2rem; /* Espaçamento entre seções */
+  background-color: #1a1a1a !important; /* Um cinza bem escuro para contraste sutil */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 4px 10px var(--cor-sombra);
+  margin-bottom: 2rem; /* Espaçamento entre seções */
 }
 
 /* Imagens */
 img {
-  border-radius: 8px; /* Bordas arredondadas para as imagens */
+  border-radius: 8px; /* Bordas arredondadas para as imagens */
 }
 
 /* Seção Home */
 #home {
-  background-size: cover;
-  background-position: center;
+  background-size: cover;
+  background-position: center;
 }
 
 #home .bg-black { /* Sobreposição escura da imagem de fundo */
-  opacity: 0.6; /* Aumentar um pouco a opacidade para o texto se destacar */
+  opacity: 0.6; /* Aumentar um pouco a opacidade para o texto se destacar */
 }
 
 /* Cards de Serviço e Portfólio */
 .card, .relative.group, .bg-white.p-8.rounded-lg.shadow-md {
-  background-color: #0d0d0d !important; /* Fundo mais escuro para cards */
-  border: 1px solid var(--cor-borda-clara);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #0d0d0d !important; /* Fundo mais escuro para cards */
+  border: 1px solid var(--cor-borda-clara);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover, .relative.group:hover, .bg-white.p-8.rounded-lg.shadow-md:hover {
-  transform: translateY(-5px) scale(1.01);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo da grade flexível para serviços e portfólio */
+.grid {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 /* Texto dentro dos cards */
 .text-gray-700 { /* Ajuste para o texto dentro dos cards */
-  color: rgba(255, 255, 255, 0.8) !important; /* Um pouco mais claro */
+  color: rgba(255, 255, 255, 0.8) !important; /* Um pouco mais claro */
 }
 
 /* Preços */
 span.text-pink-600 {
-  color: var(--cor-destaque-rosa) !important;
+  color: var(--cor-destaque-rosa) !important;
 }
 
 /* Formulário */
 input[type="text"], input[type="email"], textarea {
-  background-color: #2a2a2a; /* Fundo escuro para campos de input */
-  border: 1px solid var(--cor-borda-clara);
-  color: var(--cor-texto-principal);
+  background-color: #2a2a2a; /* Fundo escuro para campos de input */
+  border: 1px solid var(--cor-borda-clara);
+  color: var(--cor-texto-principal);
 }
 
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-  border-color: var(--cor-destaque-roxo);
-  box-shadow: 0 0 0 1px var(--cor-destaque-roxo);
+  border-color: var(--cor-destaque-roxo);
+  box-shadow: 0 0 0 1px var(--cor-destaque-roxo);
 }
 
 /* Footer */
 footer {
-  background-color: #0d0d0d; /* Fundo do footer mais escuro */
-  border-top: 1px solid var(--cor-borda-clara);
+  background-color: #0d0d0d; /* Fundo do footer mais escuro */
+  border-top: 1px solid var(--cor-borda-clara);
 }
 
 footer a {
-  color: var(--cor-texto-principal); /* Ícones sociais brancos */
+  color: var(--cor-texto-principal); /* Ícones sociais brancos */
 }
 
 footer a:hover {
-  color: var(--cor-destaque-rosa); /* Hover rosa nos ícones */
+  color: var(--cor-destaque-rosa); /* Hover rosa nos ícones */
 }
 
 /* Botão flutuante do WhatsApp */
 .whatsapp-float {
-  right: 20px;
-  left: auto;
-  bottom: 20px;
-  background-color: #25D366 !important; /* Verde original do WhatsApp */
-  color: white !important;
-  border-radius: 50%;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  animation: pulse-whatsapp 2s infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  right: 20px;
+  left: auto;
+  bottom: 20px;
+  background-color: #25D366 !important; /* Verde original do WhatsApp */
+  color: white !important;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  animation: pulse-whatsapp 2s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Animação de pulso do WhatsApp */
 @keyframes pulse-whatsapp {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } /* Verde do WhatsApp */
-  70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } /* Verde do WhatsApp */
+  70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
