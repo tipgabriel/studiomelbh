@@ -1,5 +1,4 @@
 // script.js
-
 // Funcionalidade do menu mobile
 const menuButton = document.getElementById('menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
