@@ -1,0 +1,26 @@
+/* style.css */
+
+/* Animação para o botão do WhatsApp */
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Estilos para a seção Hero (Home) para garantir que a imagem de fundo cubra a área) */
+#home {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilos para a navegação sticky e suave */
+html {
+    scroll-behavior: smooth;
+}
