@@ -6,12 +6,12 @@ const mobileMenu = document.getElementById('mobile-menu');
 
 if (menuButton && mobileMenu) {
     menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('is-open');
     });
 
     mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('is-open');
         });
     });
 }
@@ -41,7 +41,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Lógica da Galeria de Imagens
 document.addEventListener('DOMContentLoaded', () => {
-    const portfolioItems = document.querySelectorAll('.portfolio-item'); // Seleciona os itens do portfólio
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
     const galleryModal = document.getElementById('gallery-modal');
     const modalImage = document.getElementById('modal-image');
     const prevBtn = document.getElementById('prev-btn');
@@ -49,17 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('close-modal');
 
     let currentImageIndex = 0;
-    const images = Array.from(portfolioItems).map(item => item.querySelector('img').src); // Extrai as URLs das imagens
+    const images = Array.from(portfolioItems).map(item => item.querySelector('img').src);
 
     const openModal = (index) => {
         currentImageIndex = index;
         modalImage.src = images[currentImageIndex];
-        galleryModal.classList.remove('hidden');
+        galleryModal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
-        galleryModal.classList.add('hidden');
+        galleryModal.style.display = 'none';
         document.body.style.overflow = '';
     };
 
@@ -73,12 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         modalImage.src = images[currentImageIndex];
     };
 
-    // Eventos de clique para abrir o modal
     portfolioItems.forEach((item, index) => {
         item.addEventListener('click', () => openModal(index));
     });
 
-    // Eventos de clique nos botões de navegação
     if (prevBtn) {
         prevBtn.addEventListener('click', showPrevImage);
     }
@@ -89,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModalBtn.addEventListener('click', closeModal);
     }
 
-    // Fechar o modal ao clicar fora da imagem
     if (galleryModal) {
         galleryModal.addEventListener('click', (e) => {
             if (e.target === galleryModal) {
@@ -98,9 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Navegação com setas do teclado
     document.addEventListener('keydown', (e) => {
-        if (galleryModal && !galleryModal.classList.contains('hidden')) {
+        if (galleryModal.style.display === 'flex') {
             if (e.key === 'ArrowLeft') {
                 showPrevImage();
             } else if (e.key === 'ArrowRight') {
