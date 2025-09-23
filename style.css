@@ -126,14 +126,14 @@ img {
 }
 
 /* Cards de Serviço e Portfólio */
-.card, .relative.group, .bg-white.p-8.rounded-lg.shadow-md {
+/* Removendo os efeitos de hover do card */
+.card, .relative, .bg-white.p-8.rounded-lg.shadow-md {
   background-color: #0d0d0d !important; /* Fundo mais escuro para cards */
   border: 1px solid var(--cor-borda-clara);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-.card:hover, .relative.group:hover, .bg-white.p-8.rounded-lg.shadow-md:hover {
-  transform: translateY(-5px) scale(1.01);
+.card:hover, .relative:hover, .bg-white.p-8.rounded-lg.shadow-md:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
 }
 
@@ -154,6 +154,12 @@ img {
     #servicos .grid, #portfolio .grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+}
+
+/* Limita a altura das imagens do portfólio e serviços e as alinha ao topo */
+#servicos .grid img, #portfolio .grid img {
+    height: 300px; /* Altura ideal para a visualização */
+    object-position: top;
 }
 
 /* Texto dentro dos cards */
