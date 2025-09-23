@@ -65,6 +65,13 @@ header {
   box-shadow: 0 2px 5px var(--cor-sombra);
 }
 
+/* Imagem da logo no topo com bordas sutis */
+header img {
+    border-radius: 8px; /* Bordas arredondadas */
+    border: 1px solid var(--cor-borda-clara); /* Borda sutil */
+    padding: 2px;
+}
+
 header nav a {
   color: var(--cor-texto-principal); /* Links do nav brancos */
 }
@@ -102,6 +109,15 @@ header nav a:hover {
   background-color: var(--cor-destaque-roxo) !important;
 }
 
+/* Botão de WhatsApp do formulário com hover sutil */
+.bg-green-500 {
+    background-color: #25D366 !important;
+}
+
+.bg-green-500:hover {
+    background-color: #1DA851 !important; /* Um verde um pouco mais escuro, mantendo a identidade */
+}
+
 /* Seções com fundos mais claros, mas ainda escuros */
 .bg-white, .bg-gray-50, .bg-pink-50 {
   background-color: #1a1a1a !important; /* Um cinza bem escuro para contraste sutil */
@@ -111,15 +127,10 @@ header nav a:hover {
 }
 
 /* Imagens */
-/* Removendo o border-radius global para que a div .image-container o controle */
+/* Ajuste global para as imagens */
 img {
-  border-radius: 0; /* As bordas arredondadas serão controladas pelo container */
-  width: 100%; /* Garante que a imagem preencha o container */
-  height: 100%; /* Garante que a imagem preencha o container */
-  object-fit: contain; /* Faz a imagem se ajustar perfeitamente sem cortar */
-  object-position: center; /* Centraliza a imagem no container */
+  border-radius: 8px; /* Bordas arredondadas para as imagens em geral */
 }
-
 
 /* Seção Home */
 #home {
@@ -132,6 +143,7 @@ img {
 }
 
 /* Cards de Serviço e Portfólio */
+/* Removendo os efeitos de hover do card */
 .card, .relative, .bg-white.p-8.rounded-lg.shadow-md {
   background-color: #0d0d0d !important; /* Fundo mais escuro para cards */
   border: 1px solid var(--cor-borda-clara);
@@ -163,20 +175,13 @@ img {
     }
 }
 
-/* Container para as imagens nos cards de serviço e portfólio */
-/* Isso cria uma área com altura fixa para a imagem se ajustar dentro */
-#servicos .grid > div > img, /* para as imagens diretas dentro dos cards de serviços */
-#portfolio .grid > div > img { /* para as imagens diretas dentro dos cards de portfólio */
-    display: block; /* Garante que a imagem se comporte como bloco */
-    width: 100%;
-    height: 300px; /* Altura fixa para todos os espaços de imagem na grade */
-    object-fit: contain; /* Faz a imagem se ajustar perfeitamente sem cortar */
-    object-position: center; /* Centraliza a imagem dentro do container */
-    padding: 10px; /* Adiciona um pequeno padding para imagens que ficarem muito pequenas e centralizadas */
-    background-color: var(--cor-fundo-principal); /* Fundo para o container da imagem caso ela não preencha tudo */
-    border-top-left-radius: 8px; /* Arredonda as bordas superiores do container da imagem */
-    border-top-right-radius: 8px;
+/* Ajusta as imagens para preencherem o espaço e as alinha ao topo */
+#servicos .grid img, #portfolio .grid img {
+    height: 300px; /* Altura ideal para a visualização, ajuste conforme preferir */
+    object-fit: cover; /* Faz a imagem preencher o espaço, mas pode cortar */
+    object-position: top; /* Garante que o corte seja feito a partir do topo */
 }
+
 
 /* Texto dentro dos cards */
 .text-gray-700 { /* Ajuste para o texto dentro dos cards */
