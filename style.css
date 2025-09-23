@@ -85,10 +85,16 @@ header nav a:hover {
   color: var(--cor-link-hover) !important;
 }
 
+/* Menu Mobile (Corrigido para não empurrar o conteúdo) */
 #mobile-menu {
+  position: fixed; /* Fixa o menu na tela */
+  top: 6rem; /* A altura do header, para começar abaixo dele */
+  left: 0;
+  right: 0;
   background-color: var(--cor-fundo-principal) !important;
   box-shadow: 0 2px 5px var(--cor-sombra);
   border-top: 1px solid var(--cor-borda-clara);
+  z-index: 30; /* Abaixo do header */
 }
 
 #mobile-menu a {
@@ -254,18 +260,23 @@ footer a:hover {
 }
 
 /* Efeito de blur no fundo do modal (quando visível) */
-#gallery-modal.backdrop-blur-md {
+.backdrop-blur-md {
     backdrop-filter: blur(10px); /* Ajuste o valor para a intensidade do blur desejada */
 }
 
 /* Efeito de blur sutil nas setas quando o mouse passa */
 #prev-btn, #next-btn {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    padding: 0.5rem;
+    line-height: 1;
     backdrop-filter: blur(0px); /* Ponto de partida */
-    transition: backdrop-filter 0.3s ease-in-out;
+    transition: backdrop-filter 0.3s ease-in-out, background-color 0.3s ease;
 }
 
 #prev-btn:hover, #next-btn:hover {
     backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Efeito de blur sutil no botão "X" de fechar */
