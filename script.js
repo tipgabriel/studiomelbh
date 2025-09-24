@@ -1,124 +1,113 @@
+// script.js
+
+// Funcionalidade do menu mobile
+const menuButton = document.getElementById('menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+}
+
+// Atualizar o ano do copyright automaticamente
+const copyrightSpan = document.getElementById('copyright-year');
+if (copyrightSpan) {
+    const currentYear = new Date().getFullYear();
+    copyrightSpan.textContent = `© ${currentYear} Studiomelbh. Todos os direitos reservados.`;
+}
+
+// Animação de scroll suave para os links de navegação
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Lógica da Galeria de Imagens
 document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const body = document.body;
-    const copyrightYear = document.getElementById('copyright-year');
-
-    // Funcionalidade do Menu Mobile
-    const toggleMobileMenu = () => {
-        const isMenuOpen = mobileMenu.classList.contains('menu-open');
-        if (isMenuOpen) {
-            mobileMenu.classList.remove('menu-open');
-            body.classList.remove('overflow-hidden', 'overlay-active');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            menuButton.setAttribute('aria-expanded', 'false');
-        } else {
-            mobileMenu.classList.add('menu-open');
-            body.classList.add('overflow-hidden', 'overlay-active'); // Previne rolagem e adiciona overlay
-            mobileMenu.setAttribute('aria-hidden', 'false');
-            menuButton.setAttribute('aria-expanded', 'true');
-        }
-    };
-
-    menuButton.addEventListener('click', toggleMobileMenu);
-    mobileMenuClose.addEventListener('click', toggleMobileMenu);
-
-    // Fechar menu mobile ao clicar no overlay
-    body.addEventListener('click', (event) => {
-        if (event.target.classList.contains('overlay-active') && mobileMenu.classList.contains('menu-open')) {
-            toggleMobileMenu();
-        }
-    });
-
-    // Fechar menu mobile ao clicar em um link
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Previne o comportamento padrão para rolagem suave
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-
-            toggleMobileMenu(); // Fecha o menu após clicar no link
-        });
-    });
-
-    // Rolagem suave para links do menu desktop
-    document.querySelectorAll('header nav a:not(#menu-button)').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-
-    // Atualiza o ano no rodapé
-    if (copyrightYear) {
-        copyrightYear.textContent = `© ${new Date().getFullYear()} Studiomelbh. Todos os direitos reservados.`;
-    }
-
-
-    // Lógica da Galeria de Imagens
-    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+    const portfolioItems = document.querySelectorAll('.portfolio-item'); // Seleciona os itens do portfólio
     const galleryModal = document.getElementById('gallery-modal');
     const modalImage = document.getElementById('modal-image');
-    const closeModalBtn = document.getElementById('close-modal');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
+    const closeModalBtn = document.getElementById('close-modal');
 
     let currentImageIndex = 0;
+    const images = Array.from(portfolioItems).map(item => item.querySelector('img').src); // Extrai as URLs das imagens
 
     const openModal = (index) => {
         currentImageIndex = index;
-        modalImage.src = galleryItems[currentImageIndex].dataset.img;
-        galleryModal.classList.add('modal-open');
-        body.classList.add('overflow-hidden'); // Para evitar rolagem no corpo quando o modal estiver aberto
-        galleryModal.setAttribute('aria-hidden', 'false');
+        modalImage.src = images[currentImageIndex];
+        galleryModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
-        galleryModal.classList.remove('modal-open');
-        body.classList.remove('overflow-hidden');
-        galleryModal.setAttribute('aria-hidden', 'true');
+        galleryModal.classList.add('hidden');
+        document.body.style.overflow = '';
     };
 
     const showNextImage = () => {
-        currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
-        modalImage.src = galleryItems[currentImageIndex].dataset.img;
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        modalImage.src = images[currentImageIndex];
     };
 
     const showPrevImage = () => {
-        currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
-        modalImage.src = galleryItems[currentImageIndex].dataset.img;
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        modalImage.src = images[currentImageIndex];
     };
 
-    galleryItems.forEach((item, index) => {
+    // Eventos de clique para abrir o modal
+    portfolioItems.forEach((item, index) => {
         item.addEventListener('click', () => openModal(index));
     });
 
-    closeModalBtn.addEventListener('click', closeModal);
-    nextBtn.addEventListener('click', showNextImage);
-    prevBtn.addEventListener('click', showPrevImage);
+    // Eventos de clique nos botões de navegação
+    if (prevBtn) {
+        prevBtn.addEventListener('click', showPrevImage);
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', showNextImage);
+    }
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+    }
 
-    // Fechar modal ao clicar fora da imagem
-    galleryModal.addEventListener('click', (e) => {
-        if (e.target === galleryModal) {
-            closeModal();
-        }
-    });
+    // Fechar o modal ao clicar fora da imagem
+    if (galleryModal) {
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                closeModal();
+            }
+        });
+    }
 
-    // Fechar modal com a tecla ESC
+    // Navegação com setas do teclado
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && galleryModal.classList.contains('modal-open')) {
-            closeModal();
+        if (galleryModal && !galleryModal.classList.contains('hidden')) {
+            if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            } else if (e.key === 'Escape') {
+                closeModal();
+            }
         }
     });
 });
