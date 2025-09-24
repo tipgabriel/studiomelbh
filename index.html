@@ -14,6 +14,49 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    /* Estilos específicos para a galeria e o modal */
+    .portfolio-item {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .portfolio-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    #gallery-modal {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Estilo do botão de fechar, agora com o mesmo estilo dos outros botões de navegação */
+    #close-modal {
+        background-color: #000;
+        color: white;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition-property: transform;
+        transition-duration: 300ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 20;
+    }
+
+    #close-modal:hover {
+        transform: scale(1.1);
+    }
+
+    .gallery-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+</style>
 </head>
 <body class="font-sans antialiased">
 
@@ -127,11 +170,15 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4]">
         <img src="fulani-braids-close.webp" alt="Fulani Braids"
-             class="w-full h-full object-cover cursor-pointer gallery-img">
+             class="gallery-img">
       </div>
       <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4]">
         <img src="https://source.unsplash.com/random/400x400/?nails,art" alt="Unhas Decoradas"
-             class="w-full h-full object-cover cursor-pointer gallery-img">
+             class="gallery-img">
+      </div>
+      <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4]">
+        <img src="nago-detalhes.webp" alt="Tranças Nagô"
+             class="gallery-img">
       </div>
     </div>
   </div>
@@ -220,33 +267,103 @@
         </div>
     </footer>
 
-<!-- Modal da galeria -->
 <div id="gallery-modal"
-     class="fixed inset-0 z-[100] bg-black bg-opacity-90 hidden flex items-center justify-center p-4">
+      class="fixed inset-0 z-[100] bg-black bg-opacity-90 hidden flex items-center justify-center p-4">
   
-  <!-- Botão fechar -->
-<button id="close-modal"
-        class="absolute top-6 right-6 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
-  <i class="fas fa-times"></i>
-</button>
+  <button id="close-modal"
+          class="absolute top-6 right-6 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
+    <i class="fas fa-times"></i>
+  </button>
 
-  <!-- Botão anterior -->
   <button id="prev-btn"
           class="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
     <i class="fas fa-chevron-left"></i>
   </button>
 
-  <!-- Imagem -->
   <img id="modal-image" src="" alt="Imagem em destaque"
        class="relative z-10 max-w-full max-h-[90vh] object-contain rounded-lg">
 
-  <!-- Botão próximo -->
   <button id="next-btn"
           class="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
     <i class="fas fa-chevron-right"></i>
   </button>
 </div>
 
-    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const galleryModal = document.getElementById('gallery-modal');
+          const closeModalBtn = document.getElementById('close-modal');
+          const modalImage = document.getElementById('modal-image');
+          const prevBtn = document.getElementById('prev-btn');
+          const nextBtn = document.getElementById('next-btn');
+          const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+          let currentIndex = 0;
+
+          // Função para abrir o modal com a imagem clicada
+          const openModal = (index) => {
+              currentIndex = index;
+              modalImage.src = galleryImages[currentIndex].src;
+              galleryModal.classList.remove('hidden');
+          };
+
+          // Função para fechar o modal
+          const closeModal = () => {
+              galleryModal.classList.add('hidden');
+          };
+
+          // Função para navegar para a próxima imagem
+          const showNextImage = () => {
+              currentIndex = (currentIndex + 1) % galleryImages.length;
+              modalImage.src = galleryImages[currentIndex].src;
+          };
+
+          // Função para navegar para a imagem anterior
+          const showPrevImage = () => {
+              currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+              modalImage.src = galleryImages[currentIndex].src;
+          };
+
+          // Event listeners
+          galleryImages.forEach((image, index) => {
+              image.addEventListener('click', () => {
+                  openModal(index);
+              });
+          });
+
+          closeModalBtn.addEventListener('click', closeModal);
+          prevBtn.addEventListener('click', showPrevImage);
+          nextBtn.addEventListener('click', showNextImage);
+
+          // Fechar modal ao clicar fora da imagem
+          galleryModal.addEventListener('click', (e) => {
+              if (e.target === galleryModal) {
+                  closeModal();
+              }
+          });
+
+          // Fechar modal com a tecla ESC
+          document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape' && !galleryModal.classList.contains('hidden')) {
+                  closeModal();
+              }
+          });
+
+          // Ajustar ano do copyright
+          const copyrightYear = document.getElementById('copyright-year');
+          if (copyrightYear) {
+              copyrightYear.textContent = `© ${new Date().getFullYear()} Studiomelbh. Todos os direitos reservados.`;
+          }
+
+          // Funcionalidade do menu mobile
+          const menuButton = document.getElementById('menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+
+          if (menuButton && mobileMenu) {
+              menuButton.addEventListener('click', () => {
+                  mobileMenu.classList.toggle('hidden');
+              });
+          }
+      });
+    </script>
 </body>
 </html>
