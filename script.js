@@ -51,15 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentImageIndex = 0;
     const images = Array.from(portfolioItems).map(item => item.querySelector('img').src); // Extrai as URLs das imagens
 
-    const openModal = (index) => {
+const openModal = (index) => {
         currentImageIndex = index;
         modalImage.src = images[currentImageIndex];
-        galleryModal.classList.remove('hidden');
+        
+        // 🚨 Adicionamos a classe 'flex' para exibir o modal corretamente!
+        galleryModal.classList.add('flex'); 
+        
+        galleryModal.classList.remove('hidden'); 
         document.body.style.overflow = 'hidden';
     };
 
-    const closeModal = () => {
+const closeModal = () => {
         galleryModal.classList.add('hidden');
+        
+        // 🚨 Adicionamos para remover o 'flex' ao fechar
+        galleryModal.classList.remove('flex'); 
+        
         document.body.style.overflow = '';
     };
 
