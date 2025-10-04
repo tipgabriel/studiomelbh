@@ -1,229 +1,245 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudioMelBH - Excelência em Beleza e Estilo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudioMelBH - Excelência em Beleza e Estilo</title>
 
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Studiomelbh" />
+    <meta name="apple-mobile-web-app-title" content="Studiomelbh" />
 
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 
-  <style>
-    /* ===== Animação menu mobile ===== */
-    #mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-    #mobile-menu.open {
-      max-height: 400px;
-    }
-  </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="font-sans antialiased">
 
-  <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5531933012152" target="_blank" class="whatsapp-float fixed bottom-4 right-4 z-50">
-    <i class="fab fa-whatsapp text-2xl"></i>
-  </a>
-
-  <!-- HEADER -->
-  <header class="shadow-sm sticky top-0 z-40 bg-white">
-    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="text-2xl font-bold">
-        <a href="#" class="flex items-center">
-          <img src="studiomelbh.webp" alt="Studiomelbh Logo" class="h-10 mr-2">
-          <span class="hidden md:block">StudioMelBH</span>
-        </a>
-      </div>
-
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="#home" class="text-pink-600 hover:text-pink-800 font-semibold transition-colors duration-300">Início</a>
-        <a href="#sobre" class="transition-colors duration-300">Sobre</a>
-        <a href="#servicos" class="transition-colors duration-300">Serviços</a>
-        <a href="#portfolio" class="transition-colors duration-300">Portfólio</a>
-        <a href="#depoimentos" class="transition-colors duration-300">Depoimentos</a>
-        <a href="#contato" class="transition-colors duration-300">Contato</a>
-      </div>
-
-      <div class="md:hidden">
-        <button id="menu-button" class="focus:outline-none">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
-    </nav>
-
-    <div id="mobile-menu" class="md:hidden bg-white shadow-lg py-4 hidden">
-      <a href="#home" class="block px-6 py-2 hover:bg-pink-100">Início</a>
-      <a href="#sobre" class="block px-6 py-2 hover:bg-pink-100">Sobre</a>
-      <a href="#servicos" class="block px-6 py-2 hover:bg-pink-100">Serviços</a>
-      <a href="#portfolio" class="block px-6 py-2 hover:bg-pink-100">Portfólio</a>
-      <a href="#depoimentos" class="block px-6 py-2 hover:bg-pink-100">Depoimentos</a>
-      <a href="#contato" class="block px-6 py-2 hover:bg-pink-100">Contato</a>
-    </div>
-  </header>
-
-  <main>
-    <!-- SEÇÕES ORIGINAIS (sem alterações) -->
-    <!-- Home, Sobre, Serviços, Portfólio, Depoimentos, Contato -->
-    <!-- ... [SEU CONTEÚDO ORIGINAL COMPLETO AQUI, MANTIDO INTACTO] ... -->
-  <section id="home" class="text-center py-20 bg-gradient-to-b from-purple-50 to-white">
-    <h2 class="text-3xl md:text-5xl font-bold mb-4 text-purple-700">Transformando ideias em impacto digital</h2>
-    <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-      Cada projeto é um passo rumo à inovação — com design inteligente, performance e propósito.
-    </p>
-  </section>
-
-  <section id="about" class="py-20 bg-white text-center">
-    <h3 class="text-2xl font-bold text-purple-600 mb-6">Sobre o StudioMelBH</h3>
-    <p class="max-w-3xl mx-auto text-gray-700 leading-relaxed">
-      O StudioMelBH nasceu com o propósito de unir tecnologia e criatividade, desenvolvendo soluções digitais que encantam e entregam resultado. 
-      Acreditamos em design funcional, código limpo e experiências que realmente fazem diferença.
-    </p>
-  </section>
-
-  <section id="portfolio" class="py-20 bg-gray-50 text-center">
-    <h3 class="text-2xl font-bold text-purple-600 mb-10">Portfólio</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-      <img src="img/projeto1.jpg" alt="Projeto 1" class="rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300 portfolio-img">
-      <img src="img/projeto2.jpg" alt="Projeto 2" class="rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300 portfolio-img">
-      <img src="img/projeto3.jpg" alt="Projeto 3" class="rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300 portfolio-img">
-      <img src="img/projeto4.jpg" alt="Projeto 4" class="rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300 portfolio-img">
-      <img src="img/projeto5.jpg" alt="Projeto 5" class="rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300 portfolio-img">
-      <img src="img/projeto6.jpg" alt="Projeto 6" class="rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300 portfolio-img">
-    </div>
-  </section>
-
-  <section id="testimonials" class="py-20 bg-white text-center">
-    <h3 class="text-2xl font-bold text-purple-600 mb-10">Depoimentos</h3>
-    <div class="max-w-4xl mx-auto space-y-8">
-      <div class="bg-purple-50 p-6 rounded-lg shadow">
-        <p class="text-gray-700 italic">“Profissional excepcional! Entregou tudo com qualidade e no prazo.”</p>
-        <h4 class="mt-4 font-semibold text-purple-700">— Camila Ribeiro</h4>
-      </div>
-      <div class="bg-purple-50 p-6 rounded-lg shadow">
-        <p class="text-gray-700 italic">“Trabalho impecável. O site ficou rápido, bonito e funcional.”</p>
-        <h4 class="mt-4 font-semibold text-purple-700">— Lucas Martins</h4>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="py-20 bg-gray-50 text-center">
-    <h3 class="text-2xl font-bold text-purple-600 mb-6">Contato</h3>
-    <p class="text-gray-700 mb-8">
-      Entre em contato e transforme sua ideia em um projeto memorável.
-    </p>
-    <a href="mailto:contato@studiomelbh.com.br" 
-       class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition">
-      contato@studiomelbh.com.br
+    <a href="https://wa.me/5531933012152" target="_blank" class="whatsapp-float fixed bottom-4 right-4 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
     </a>
-  </section>
-</main>
 
-    <!-- Modal da Galeria -->
+    <header class="shadow-sm sticky top-0 z-40">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold">
+                <a href="#" class="flex items-center">
+                    <img src="studiomelbh.webp" alt="Studiomelbh Logo" class="h-10 mr-2">
+                    <span class="hidden md:block">StudioMelBH</span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-pink-600 hover:text-pink-800 font-semibold transition-colors duration-300">Início</a>
+                <a href="#sobre" class="transition-colors duration-300">Sobre</a>
+                <a href="#servicos" class="transition-colors duration-300">Serviços</a>
+                <a href="#portfolio" class="transition-colors duration-300">Portfólio</a>
+                <a href="#depoimentos" class="transition-colors duration-300">Depoimentos</a>
+                <a href="#contato" class="transition-colors duration-300">Contato</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-button" class="focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden shadow-lg py-4">
+            <a href="#home" class="block px-6 py-2 hover:bg-pink-100">Início</a>
+            <a href="#sobre" class="block px-6 py-2 hover:bg-pink-100">Sobre</a>
+            <a href="#servicos" class="block px-6 py-2 hover:bg-pink-100">Serviços</a>
+            <a href="#portfolio" class="block px-6 py-2 hover:bg-pink-100">Portfólio</a>
+            <a href="#depoimentos" class="block px-6 py-2 hover:bg-pink-100">Depoimentos</a>
+            <a href="#contato" class="block px-6 py-2 hover:bg-pink-100">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('unha-alison-christine.webp');"></div>
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div class="relative z-10 text-center text-white p-8 max-w-2xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">STUDIOMELBH – Excelência em Beleza e Estilo</h1>
+                <p class="text-lg md:text-xl mb-8">Unhas, tranças e cuidados personalizados para valorizar sua melhor versão.</p>
+                <a href="#contato" class="inline-block bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 transform hover:scale-105">Agende Seu Horário</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6">Nossa História</h2>
+                    <p class="text-lg leading-relaxed mb-4">
+                        O StudioMelBH nasceu do meu sonho de realçar a beleza feminina e criar um espaço onde cada mulher pudesse se sentir única, valorizada e confiante. Sempre tive uma paixão especial por detalhes — das rosas que tanto amo até o cuidado com cada gesto — e quis trazer isso para dentro do estúdio.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Com uma equipe de profissionais dedicadas e apaixonadas, buscamos constantemente as últimas tendências e técnicas para garantir que cada cliente saia do nosso estúdio se sentindo renovada, confiante e absolutamente linda. Valorizamos a individualidade e a essência de cada mulher.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Desde o início, meu compromisso foi oferecer muito mais que serviços: quis construir um ambiente acolhedor, profissional e inspirador, onde cada cliente pudesse florescer de dentro para fora.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Com o apoio de uma equipe dedicada e apaixonada pelo que faz, buscamos constantemente novas técnicas e tendências para entregar sempre o melhor. Cada sorriso, cada olhar confiante que sai daqui, é o que me move a continuar acreditando nesse propósito.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="studiomelbh2.webp" alt="Studiomelbh" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-96">
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-4">Nossos Serviços</h2>
+                <p class="text-xl text-center mb-12">Descubra como posso transformar seu visual e valorizar sua beleza de forma única.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden service-card">
+                        <div class="aspect-[3/4] w-full overflow-hidden">
+                            <img src="nago-detalhes.webp"  alt="Cliente satisfeita com as tranças Nagô feita pelo studiomelbh em Belo Horizonte" class="w-full h-full object-cover object-center service-img">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-3">Trança Nagô</h3>
+                            <p class="mb-4">Nagô, Box Braids, Boxeadora, Fulani Braids.</p>
+                            <span class="text-pink-600 font-bold text-xl">A partir de R$ 120,00</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden service-card">
+                        <div class="aspect-[3/4] w-full overflow-hidden">
+                            <img src="https://source.unsplash.com/random/400x300/?nails,manicure,gel" alt="Unhas Impecáveis" class="w-full h-full object-cover object-center service-img">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-3">Unhas Impecáveis</h3>
+                            <p class="mb-4">Manicure & Pedicure, Gel, Acrílico, Esmaltação em Gel, Blindagem, Artes personalizadas.</p>
+                            <span class="text-pink-600 font-bold text-xl">A partir de R$ 50,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-4">Nossos Trabalhos</h2>
+                <p class="text-xl text-center mb-12">Aqui você confere uma galeria do meu talento e da minha paixão por transformar cada detalhe em beleza única.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4]">
+                        <img src="fulani-braids-close.webp" alt="Fulani Braids" class="w-full h-full object-cover">
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4]">
+                        <img src="https://source.unsplash.com/random/400x400/?nails,art" alt="Unhas Decoradas" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-4">O Que Nossas Clientes Dizem</h2>
+                <p class="text-xl text-center mb-12">Transformando vidas e elevando a autoestima.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <p class="text-lg italic mb-6">"Fiz tranças nagô e ficaram perfeitas! Cuidado total, acabamento impecável. Me senti uma rainha."</p>
+                        <div class="flex items-center">
+                            <img src="camila.webp" alt="Cliente satisfeita com suas tranças nagô feita no studiomelbh" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <p class="font-semibold">Camila Luzia</p>
+                                <p class="text-sm">Cliente de Tranças</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <p class="text-lg italic mb-6">"Fiz minhas tranças aqui e amei o resultado! A equipe é super talentosa e o ambiente é muito acolhedor. Me sinto linda!"</p>
+                        <div class="flex items-center">
+                            <img src="https://source.unsplash.com/random/100x100/?braids,customer,smiling" alt="Cliente 2" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <p class="font-semibold">Beatriz G.</p>
+                                <p class="text-sm">Cliente de Unha</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-16 md:py-24 bg-pink-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-4">Fale Conosco e Agende Online</h2>
+                <p class="text-xl text-center mb-12">Estou ansiosa para te receber e ajudar você a realçar sua beleza. Agende seu horário e venha viver uma experiência única de cuidado e bem-estar.</p>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                    <div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6">Envie sua Mensagem</h3>
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-bold mb-2">Nome:</label>
+                                <input type="text" id="name" name="name" placeholder="Como posso te chamar?" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-bold mb-2">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="O seu melhor email" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-bold mb-2">Mensagem:</label>
+                                <textarea id="message" name="message" placeholder="Conte como posso te ajudar a realçar sua beleza" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300">Enviar Mensagem</button>
+                        </form>
+                    </div>
+
+                    <div class="w-full md:w-1/3 bg-white p-8 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-semibold mb-6">Agende Online Via WhatsApp</h3>
+                        <p class="mb-6">Clique no botão abaixo para conversar conosco e agendar seu horário com facilidade.</p>
+                        <a href="https://wa.me/5531933012152" target="_blank" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>Agendar no WhatsApp</span>
+                        </a>
+                        <div class="mt-8">
+                            <p class="mb-2"><i class="fas fa-map-marker-alt text-pink-600 mr-2"></i> Rua Carmo do Rio Claro, 86 - São Cristóvão, Belo Horizonte - MG</p>
+                            <p class="mb-2"><i class="fas fa-phone text-pink-600 mr-2"></i> (31) 93301-2152</p>
+                            <p class="mb-2"><i class="fas fa-envelope text-pink-600 mr-2"></i> studiomelbh@proton.me</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>   
+    </main>
+
+    <footer class="text-white py-8">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+                <p id="copyright-year">&copy; 2025 Studiomelbh. Todos os direitos reservados.</p>
+            </div>
+            <div class="flex space-x-6 text-2xl">
+                <a href="https://instagram.com/studiomelbh" target="_blank" class="transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <div id="gallery-modal" class="fixed inset-0 z-[100] bg-black bg-opacity-90 hidden flex items-center justify-center p-4">
-      <!-- Botão Fechar -->
-      <button id="close-modal" class="absolute top-4 right-4 z-20 bg-black text-white text-3xl w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
-        <i class="fas fa-times"></i>
-      </button>
 
-      <!-- Botão Anterior -->
-      <button id="prev-btn" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
-        <i class="fas fa-chevron-left"></i>
-      </button>
+        <button id="close-modal" 
+            class="absolute top-4 right-4 z-20 bg-black text-white text-3xl w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-times"></i>
+        </button>
 
-      <!-- Imagem -->
-      <img id="modal-image" src="" alt="Imagem em destaque" class="relative z-10 max-w-full max-h-[90vh] object-contain rounded-lg">
+        <button id="prev-btn" 
+            class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-chevron-left"></i>
+        </button>
 
-      <!-- Botão Próximo -->
-      <button id="next-btn" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+        <img id="modal-image" src="" alt="Imagem em destaque" 
+            class="relative z-10 max-w-full max-h-[90vh] object-contain rounded-lg">
+
+        <button id="next-btn" 
+            class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </div>
-  </main>
 
-  <!-- FOOTER ORIGINAL -->
-  <footer class="text-white py-8 bg-gray-900">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-      <div class="mb-4 md:mb-0">
-        <p id="copyright-year">&copy; 2025 Studiomelbh. Todos os direitos reservados.</p>
-      </div>
-      <div class="flex space-x-6 text-2xl">
-        <a href="https://instagram.com/studiomelbh" target="_blank" class="transition-colors duration-300">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- SCRIPT -->
-  <script>
-    // ===== Menu Hambúrguer =====
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('open');
-    });
-
-    // ===== Galeria =====
-    const portfolioImages = document.querySelectorAll('.portfolio-item img');
-    const modal = document.getElementById('gallery-modal');
-    const modalImage = document.getElementById('modal-image');
-    const closeModal = document.getElementById('close-modal');
-    const nextBtn = document.getElementById('next-btn');
-    const prevBtn = document.getElementById('prev-btn');
-
-    let currentIndex = 0;
-    let imageList = [];
-
-    portfolioImages.forEach((img, index) => {
-      imageList.push(img.src);
-      img.addEventListener('click', () => {
-        currentIndex = index;
-        modalImage.src = img.src;
-        modal.classList.remove('hidden');
-      });
-    });
-
-    const showImage = (index) => {
-      modalImage.src = imageList[index];
-    };
-
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % imageList.length;
-      showImage(currentIndex);
-    });
-
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
-      showImage(currentIndex);
-    });
-
-    closeModal.addEventListener('click', () => {
-      modal.classList.add('hidden');
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (modal.classList.contains('hidden')) return;
-      if (e.key === 'Escape') modal.classList.add('hidden');
-      if (e.key === 'ArrowRight') nextBtn.click();
-      if (e.key === 'ArrowLeft') prevBtn.click();
-    });
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.add('hidden');
-    });
-  </script>
-
-</body>
+    <script src="script.js"></script>
+</body> 
 </html>
