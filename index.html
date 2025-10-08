@@ -3,244 +3,980 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudioMelBH - Excelência em Beleza e Estilo</title>
+    <title>StudioMelBH - Tranças e Nail Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <meta name="apple-mobile-web-app-title" content="Studiomelbh" />
+        :root {
+            --primary: #ff69b4;
+            --secondary: #ffb6c1;
+            --accent: #ff1493;
+            --dark: #333;
+            --light: #fff;
+            --gray: #f5f5f5;
+            --transition: all 0.3s ease;
+        }
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--light);
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Serviços */
+        .services {
+            background-color: var(--gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Galeria */
+        .gallery-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery {
+            display: flex;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+
+        .gallery-btn {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: var(--dark);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .gallery-btn:hover {
+            background-color: var(--light);
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .thumbnail.active {
+            opacity: 1;
+            border: 2px solid var(--primary);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Sobre */
+        .about {
+            background-color: var(--gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* Contato */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            background-color: var(--secondary);
+            color: var(--light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after,
+        .footer-social h4::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #bbb;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--light);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 0 0 30px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .gallery-item img {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-item img {
+                height: 300px;
+            }
+
+            .gallery-thumbnails {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
 </head>
-<body class="font-sans antialiased">
-
-    <a href="https://wa.me/5531933012152" target="_blank" class="whatsapp-float fixed bottom-4 right-4 z-50">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
-
-    <header class="shadow-sm sticky top-0 z-40">
-        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="text-2xl font-bold">
-                <a href="#" class="flex items-center">
-                    <img src="studiomelbh.webp" alt="Studiomelbh Logo" class="h-10 mr-2">
-                    <span class="hidden md:block">StudioMelBH</span>
-                </a>
-            </div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="text-pink-600 hover:text-pink-800 font-semibold transition-colors duration-300">Início</a>
-                <a href="#sobre" class="transition-colors duration-300">Sobre</a>
-                <a href="#servicos" class="transition-colors duration-300">Serviços</a>
-                <a href="#portfolio" class="transition-colors duration-300">Portfólio</a>
-                <a href="#depoimentos" class="transition-colors duration-300">Depoimentos</a>
-                <a href="#contato" class="transition-colors duration-300">Contato</a>
-            </div>
-            <div class="md:hidden">
-                <button id="menu-button" class="focus:outline-none">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden shadow-lg py-4">
-            <a href="#home" class="block px-6 py-2 hover:bg-pink-100">Início</a>
-            <a href="#sobre" class="block px-6 py-2 hover:bg-pink-100">Sobre</a>
-            <a href="#servicos" class="block px-6 py-2 hover:bg-pink-100">Serviços</a>
-            <a href="#portfolio" class="block px-6 py-2 hover:bg-pink-100">Portfólio</a>
-            <a href="#depoimentos" class="block px-6 py-2 hover:bg-pink-100">Depoimentos</a>
-            <a href="#contato" class="block px-6 py-2 hover:bg-pink-100">Contato</a>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Studio<span>Mel</span>BH</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('unha-alison-christine.webp');"></div>
-            <div class="absolute inset-0 bg-black opacity-40"></div>
-            <div class="relative z-10 text-center text-white p-8 max-w-2xl mx-auto">
-                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">STUDIOMELBH – Excelência em Beleza e Estilo</h1>
-                <p class="text-lg md:text-xl mb-8">Unhas, tranças e cuidados personalizados para valorizar sua melhor versão.</p>
-                <a href="#contato" class="inline-block bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 transform hover:scale-105">Agende Seu Horário</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Realce sua beleza com estilo</h1>
+                <p>No StudioMelBH, oferecemos serviços especializados em tranças e nail design para valorizar sua beleza única.</p>
+                <a href="#contact" class="btn">Agende seu horário</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="sobre" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-bold mb-6">Nossa História</h2>
-                    <p class="text-lg leading-relaxed mb-4">
-                        O StudioMelBH nasceu do meu sonho de realçar a beleza feminina e criar um espaço onde cada mulher pudesse se sentir única, valorizada e confiante. Sempre tive uma paixão especial por detalhes — das rosas que tanto amo até o cuidado com cada gesto — e quis trazer isso para dentro do estúdio.
-                    </p>
-                    <p class="text-lg leading-relaxed mb-4">
-                        Com uma equipe de profissionais dedicadas e apaixonadas, buscamos constantemente as últimas tendências e técnicas para garantir que cada cliente saia do nosso estúdio se sentindo renovada, confiante e absolutamente linda. Valorizamos a individualidade e a essência de cada mulher.
-                    </p>
-                    <p class="text-lg leading-relaxed mb-4">
-                        Desde o início, meu compromisso foi oferecer muito mais que serviços: quis construir um ambiente acolhedor, profissional e inspirador, onde cada cliente pudesse florescer de dentro para fora.
-                    </p>
-                    <p class="text-lg leading-relaxed mb-4">
-                        Com o apoio de uma equipe dedicada e apaixonada pelo que faz, buscamos constantemente novas técnicas e tendências para entregar sempre o melhor. Cada sorriso, cada olhar confiante que sai daqui, é o que me move a continuar acreditando nesse propósito.
-                    </p>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="studiomelbh2.webp" alt="Studiomelbh" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-96">
-                </div>
+    <!-- Serviços -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Descubra nossos tratamentos exclusivos para realçar sua beleza</p>
             </div>
-        </section>
-
-        <section id="servicos" class="py-16 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-4">Nossos Serviços</h2>
-                <p class="text-xl text-center mb-12">Descubra como posso transformar seu visual e valorizar sua beleza de forma única.</p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden service-card">
-                        <div class="aspect-[3/4] w-full overflow-hidden">
-                            <img src="nago-detalhes.webp"  alt="Cliente satisfeita com as tranças Nagô feita pelo studiomelbh em Belo Horizonte" class="w-full h-full object-cover object-center service-img">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-3">Trança Nagô</h3>
-                            <p class="mb-4">Nagô, Box Braids, Boxeadora, Fulani Braids.</p>
-                            <span class="text-pink-600 font-bold text-xl">A partir de R$ 120,00</span>
-                        </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Tranças Box Braids">
                     </div>
-
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden service-card">
-                        <div class="aspect-[3/4] w-full overflow-hidden">
-                            <img src="https://source.unsplash.com/random/400x300/?nails,manicure,gel" alt="Unhas Impecáveis" class="w-full h-full object-cover object-center service-img">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-3">Unhas Impecáveis</h3>
-                            <p class="mb-4">Manicure & Pedicure, Gel, Acrílico, Esmaltação em Gel, Blindagem, Artes personalizadas.</p>
-                            <span class="text-pink-600 font-bold text-xl">A partir de R$ 50,00</span>
-                        </div>
+                    <div class="service-content">
+                        <h3>Tranças Box Braids</h3>
+                        <p>Tranças protetoras elegantes e duráveis, perfeitas para qualquer ocasião.</p>
+                        <p class="price">A partir de R$ 150,00</p>
+                        <a href="#contact" class="btn">Agendar</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-4">Nossos Trabalhos</h2>
-                <p class="text-xl text-center mb-12">Aqui você confere uma galeria do meu talento e da minha paixão por transformar cada detalhe em beleza única.</p>
-
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-  <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4]">
-    <img src="fulani-braids-close.webp" alt="Fulani Braids"
-         class="w-full h-full object-cover object-top">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Tranças Nagô">
                     </div>
-                    <div class="relative rounded-lg overflow-hidden shadow-lg portfolio-item aspect-[3/4]">
-                        <img src="https://source.unsplash.com/random/400x400/?nails,art" alt="Unhas Decoradas" class="w-full h-full object-cover">
+                    <div class="service-content">
+                        <h3>Tranças Nagô</h3>
+                        <p>Estilo clássico e versátil que valoriza a beleza natural do cabelo.</p>
+                        <p class="price">A partir de R$ 120,00</p>
+                        <a href="#contact" class="btn">Agendar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Alongamento de Unhas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Alongamento de Unhas</h3>
+                        <p>Unhas perfeitas e personalizadas com alongamento em gel ou acrílico.</p>
+                        <p class="price">A partir de R$ 80,00</p>
+                        <a href="#contact" class="btn">Agendar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Manicure e Pedicure">
+                    </div>
+                    <div class="service-content">
+                        <h3>Manicure e Pedicure</h3>
+                        <p>Cuidados completos para suas mãos e pés, com designs exclusivos.</p>
+                        <p class="price">A partir de R$ 50,00</p>
+                        <a href="#contact" class="btn">Agendar</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="depoimentos" class="py-16 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-4">O Que Nossas Clientes Dizem</h2>
-                <p class="text-xl text-center mb-12">Transformando vidas e elevando a autoestima.</p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <p class="text-lg italic mb-6">"Fiz tranças nagô e ficaram perfeitas! Cuidado total, acabamento impecável. Me senti uma rainha."</p>
-                        <div class="flex items-center">
-                            <img src="camila.webp" alt="Cliente satisfeita com suas tranças nagô feita no studiomelbh" class="w-12 h-12 rounded-full mr-4 object-cover">
-                            <div>
-                                <p class="font-semibold">Camila Luzia</p>
-                                <p class="text-sm">Cliente de Tranças</p>
-                            </div>
-                        </div>
+    <!-- Galeria -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Galeria</h2>
+                <p>Confira alguns dos nossos trabalhos realizados</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Tranças Box Braids">
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <p class="text-lg italic mb-6">"Fiz minhas tranças aqui e amei o resultado! A equipe é super talentosa e o ambiente é muito acolhedor. Me sinto linda!"</p>
-                        <div class="flex items-center">
-                            <img src="https://source.unsplash.com/random/100x100/?braids,customer,smiling" alt="Cliente 2" class="w-12 h-12 rounded-full mr-4 object-cover">
-                            <div>
-                                <p class="font-semibold">Beatriz G.</p>
-                                <p class="text-sm">Cliente de Unha</p>
-                            </div>
-                        </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Tranças Nagô">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Alongamento de Unhas">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Manicure e Pedicure">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Cuidados Femininos">
+                    </div>
+                </div>
+                <div class="gallery-controls">
+                    <div class="gallery-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="gallery-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="gallery-thumbnails">
+                    <div class="thumbnail active">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Tranças Box Braids">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Tranças Nagô">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Alongamento de Unhas">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Manicure e Pedicure">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Cuidados Femininos">
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contato" class="py-16 md:py-24 bg-pink-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-4">Fale Conosco e Agende Online</h2>
-                <p class="text-xl text-center mb-12">Estou ansiosa para te receber e ajudar você a realçar sua beleza. Agende seu horário e venha viver uma experiência única de cuidado e bem-estar.</p>
+    <!-- Sobre -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Nós</h2>
+                <p>Conheça a história do StudioMelBH</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Especialistas em beleza e autoestima</h3>
+                    <p>O StudioMelBH nasceu da paixão por realçar a beleza única de cada mulher. Com mais de 5 anos de experiência no mercado, nos dedicamos a oferecer serviços de alta qualidade em tranças e nail design.</p>
+                    <p>Nossa missão é proporcionar uma experiência única e personalizada, onde cada cliente se sinta especial e confiante. Utilizamos apenas produtos de qualidade e técnicas atualizadas para garantir resultados excepcionais.</p>
+                    <p>No StudioMelBH, acreditamos que a beleza vai além da estética - é sobre expressão pessoal, confiança e bem-estar.</p>
+                    <a href="#contact" class="btn">Entre em contato</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Sobre o StudioMelBH">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="flex flex-col md:flex-row items-center justify-center gap-12">
-                    <div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-md">
-                        <h3 class="text-2xl font-semibold mb-6">Envie sua Mensagem</h3>
-                        <form action="#" method="POST" class="space-y-4">
-                            <div>
-                                <label for="name" class="block text-sm font-bold mb-2">Nome:</label>
-                                <input type="text" id="name" name="name" placeholder="Como posso te chamar?" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" required>
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-bold mb-2">Email:</label>
-                                <input type="email" id="email" name="email" placeholder="O seu melhor email" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" required>
-                            </div>
-                            <div>
-                                <label for="message" class="block text-sm font-bold mb-2">Mensagem:</label>
-                                <textarea id="message" name="message" placeholder="Conte como posso te ajudar a realçar sua beleza" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
-                            </div>
-                            <button type="submit" class="bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300">Enviar Mensagem</button>
-                        </form>
+    <!-- Contato -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Agende seu horário ou tire suas dúvidas</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Endereço</h4>
+                            <p>Rua das Flores, 123 - Centro<br>Belo Horizonte - MG</p>
+                        </div>
                     </div>
-
-                    <div class="w-full md:w-1/3 bg-white p-8 rounded-lg shadow-md text-center">
-                        <h3 class="text-2xl font-semibold mb-6">Agende Online Via WhatsApp</h3>
-                        <p class="mb-6">Clique no botão abaixo para conversar conosco e agendar seu horário com facilidade.</p>
-                        <a href="https://wa.me/5531933012152" target="_blank" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 flex items-center justify-center space-x-2">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                            <span>Agendar no WhatsApp</span>
-                        </a>
-                        <div class="mt-8">
-                            <p class="mb-2"><i class="fas fa-map-marker-alt text-pink-600 mr-2"></i> Rua Carmo do Rio Claro, 86 - São Cristóvão, Belo Horizonte - MG</p>
-                            <p class="mb-2"><i class="fas fa-phone text-pink-600 mr-2"></i> (31) 93301-2152</p>
-                            <p class="mb-2"><i class="fas fa-envelope text-pink-600 mr-2"></i> studiomelbh@proton.me</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefone</h4>
+                            <p>(31) 99999-9999</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-mail</h4>
+                            <p>contato@studiomelbh.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sábado: 9h às 19h<br>Domingo: Fechado</p>
                         </div>
                     </div>
                 </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Seu telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" disabled selected>Selecione o serviço</option>
+                                <option value="trancas-box-braids">Tranças Box Braids</option>
+                                <option value="trancas-nago">Tranças Nagô</option>
+                                <option value="alongamento-unhas">Alongamento de Unhas</option>
+                                <option value="manicure-pedicure">Manicure e Pedicure</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Sua mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
             </div>
-        </section>   
-    </main>
+        </div>
+    </section>
 
-    <footer class="text-white py-8">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-            <div class="mb-4 md:mb-0">
-                <p id="copyright-year">&copy; 2025 Studiomelbh. Todos os direitos reservados.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Studio<span>Mel</span>BH</div>
+                    <p>Especialistas em tranças e nail design, dedicados a realçar sua beleza única com serviços de alta qualidade.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="flex space-x-6 text-2xl">
-                <a href="https://instagram.com/studiomelbh" target="_blank" class="transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> StudioMelBH. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <div id="gallery-modal" class="fixed inset-0 z-[100] bg-black bg-opacity-90 hidden flex items-center justify-center p-4">
+    <!-- JSON-LD para SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "StudioMelBH",
+        "description": "Studio especializado em tranças e nail design, oferecendo serviços de alta qualidade para cuidados femininos.",
+        "url": "https://www.studiomelbh.com.br",
+        "telephone": "+55-31-99999-9999",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua das Flores, 123",
+            "addressLocality": "Belo Horizonte",
+            "addressRegion": "MG",
+            "postalCode": "30000-000",
+            "addressCountry": "BR"
+        },
+        "openingHours": "Mo-Sa 09:00-19:00",
+        "priceRange": "R$ 50 - R$ 200",
+        "serviceType": ["Tranças", "Nail Design", "Manicure", "Pedicure"],
+        "areaServed": "Belo Horizonte e região",
+        "sameAs": [
+            "https://www.instagram.com/studiomelbh",
+            "https://www.facebook.com/studiomelbh"
+        ]
+    }
+    </script>
 
-        <button id="close-modal" 
-            class="absolute top-4 right-4 z-20 bg-black text-white text-3xl w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-times"></i>
-        </button>
+    <script>
+        // Menu Mobile
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
 
-        <button id="prev-btn" 
-            class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-chevron-left"></i>
-        </button>
+        // Galeria
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentIndex = 0;
 
-        <img id="modal-image" src="" alt="Imagem em destaque" 
-            class="relative z-10 max-w-full max-h-[30vh] object-contain rounded-lg">
+        function updateGallery() {
+            // Atualiza a galeria principal
+            document.querySelector('.gallery').style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Atualiza as miniaturas ativas
+            thumbnails.forEach((thumb, index) => {
+                if (index === currentIndex) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+        }
 
-        <button id="next-btn" 
-            class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black text-white text-2xl w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-    </div>
+        // Eventos dos botões
+        prevBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryItems.length - 1;
+            updateGallery();
+        });
 
-    <script src="script.js"></script>
-</body> 
+        nextBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex < galleryItems.length - 1) ? currentIndex + 1 : 0;
+            updateGallery();
+        });
+
+        // Eventos das miniaturas
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', function() {
+                currentIndex = index;
+                updateGallery();
+            });
+        });
+
+        // Navegação por teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryItems.length - 1;
+                updateGallery();
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex < galleryItems.length - 1) ? currentIndex + 1 : 0;
+                updateGallery();
+            }
+        });
+
+        // Atualizar ano do copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Formulário de contato
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigada pelo seu contato! Em breve retornaremos sua mensagem.');
+            this.reset();
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Fechar menu mobile se estiver aberto
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
