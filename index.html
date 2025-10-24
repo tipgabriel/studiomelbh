@@ -166,24 +166,20 @@ body, html {
     width: 100%;
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-        url('portfolio-background.png') no-repeat center center/cover;
+        url('portfolio-background.png') no-repeat center center/contain;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--light);
     margin-top: 70px;
     
-    /* Garantias extras */
-    width: 100%;
-    position: relative;
-    background-attachment: fixed; /* Opcional: para efeito parallax */
+    /* Cor de fundo para as áreas que não são cobertas pela imagem */
+    background-color: #000; /* ou a cor predominante da sua imagem */
 }
-
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
