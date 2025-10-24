@@ -169,22 +169,14 @@ body, html {
 .hero {
     height: 100vh;
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Mudei de 0.5 para 0.7 */
         url('portfolio-background.png') no-repeat center center/contain;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--light);
     margin-top: 70px;
-    
-    /* Cor de fundo para as áreas que não são cobertas pela imagem */
-    background-color: #0e1413; /* ou a cor predominante da sua imagem */
-}
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+    background-color: #0e1413;
 }
 
         .hero h1 {
