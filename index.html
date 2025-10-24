@@ -162,7 +162,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('portfolio-background.png') no-repeat center center/cover;
             display: flex;
             align-items: center;
             text-align: center;
@@ -583,36 +583,6 @@
             }
         }
 
-        .hero {
-    background-image: url('portfolio-background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Opcional: efeito parallax */
-    
-    /* Altura mínima para garantir visibilidade */
-    min-height: 100vh;
-    
-    /* Para garantir que o conteúdo fique sobre a imagem */
-    position: relative;
-}
-
-/* Se quiser um overlay escuro para melhor contraste do texto */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Ajuste a opacidade conforme necessário */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
-}
     </style>
 </head>
 <body>
