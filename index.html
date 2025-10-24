@@ -159,21 +159,37 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('portfolio-background.png') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--light);
-            margin-top: 70px;
-        }
+/* Reset para garantir que não há margens indesejadas */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('portfolio-background.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--light);
+    margin-top: 70px;
+    
+    /* Garantias extras */
+    width: 100%;
+    position: relative;
+    background-attachment: fixed; /* Opcional: para efeito parallax */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
 
         .hero h1 {
             font-size: 3.5rem;
