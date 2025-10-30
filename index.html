@@ -959,21 +959,33 @@
     transform: none !important;
 }
 
-        /* SOLUÇÃO ALTERNATIVA - Prevenir quadrado branco */
+/* CORREÇÃO PARA O QUADRADO BRANCO DO WHATSAPP */
 .whatsapp-float {
-    background-color: #25D366;
-    min-width: 70px;
-    min-height: 70px;
+    background-color: #25D366 !important;
 }
 
 .whatsapp-float i {
-    font-size: 2rem;
-    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-/* Garantir que o elemento esteja pronto antes do carregamento */
-.whatsapp-float:not(:defined) {
-    background-color: #25D366;
+/* Garantir que o ícone carregue corretamente */
+.whatsapp-float::before {
+    content: '' !important;
+    display: none !important;
+}
+
+/* Fallback para caso o ícone não carregue */
+.whatsapp-float {
+    font-family: 'Font Awesome 6 Brands', 'Segoe UI', sans-serif !important;
+}
+
+.whatsapp-float i::before {
+    content: '\f232' !important; /* Código Unicode do WhatsApp */
 }
     </style>
 </head>
