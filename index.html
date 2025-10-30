@@ -93,7 +93,7 @@
         }
 
         .btn-whatsapp:hover {
-            background-color: #128C7E;
+            background-color: var(--whatsapp); /* Mantém a mesma cor no hover */
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
@@ -198,7 +198,7 @@
             }
         }
 
-        /* WhatsApp Flutuante */
+        /* WhatsApp Flutuante - Apenas Pulsante */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -214,13 +214,13 @@
             font-size: 2rem;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             z-index: 1000;
-            animation: pulse 2s infinite, float-whatsapp 3s ease-in-out infinite;
+            animation: pulse 2s infinite; /* Removida a animação de flutuação */
             transition: var(--transition);
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1);
-            animation: none;
+            transform: scale(1.1); /* Mantém apenas o scale no hover */
+            animation: pulse 2s infinite; /* Continua pulsando no hover */
         }
 
         @keyframes pulse {
@@ -232,15 +232,6 @@
             }
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        @keyframes float-whatsapp {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
             }
         }
 
@@ -736,12 +727,12 @@
         }
 
         .whatsapp-btn:hover {
-            background-color: #128C7E;
+            background-color: var(--whatsapp); /* Mantém a mesma cor */
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
         }
 
-        /* Footer */
+        /* Footer - Links do WhatsApp mantêm a cor padrão */
         footer {
             background-color: var(--dark);
             color: var(--light);
@@ -835,6 +826,18 @@
         .social-icons a:hover {
             background-color: var(--primary);
             transform: translateY(-5px);
+        }
+
+        /* Links do WhatsApp no footer mantêm a cor padrão */
+        .footer-social ul li a[href*="whatsapp"],
+        .footer-social ul li a[href*="wa.me"] {
+            color: #c9b8b8 !important;
+        }
+
+        .footer-social ul li a[href*="whatsapp"]:hover,
+        .footer-social ul li a[href*="wa.me"]:hover {
+            color: #c9b8b8 !important;
+            padding-left: 5px;
         }
 
         .copyright {
@@ -948,7 +951,7 @@
     <div class="butterfly butterfly-4"></div>
     <div class="butterfly butterfly-5"></div>
 
-    <!-- WhatsApp Flutuante -->
+    <!-- WhatsApp Flutuante - Apenas Pulsante -->
     <a href="https://wa.me/5531933012152?text=Olá! Gostaria de agendar um horário no StudioMelBH" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -1092,8 +1095,8 @@
             <div class="contact-info">
                 <h3>Fale Conosco pelo WhatsApp</h3>
                 <div class="contact-details">
-                    <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - Centro, Belo Horizonte - MG</p>
-                    <p><i class="fas fa-clock"></i> Segunda a Sábado: 9h às 19h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Carmo do Rio Claro, 86 - São Cristóvão, Belo Horizonte - MG</p>
+                    <p><i class="fas fa-clock"></i> Segunda a Sábado: atendimento somente com agendamento.</p>
                     <p><i class="fas fa-phone"></i> (31) 93301-2152</p>
                 </div>
                 <a href="https://wa.me/5531933012152?text=Olá! Gostaria de agendar um horário no StudioMelBH" class="whatsapp-btn" target="_blank">
